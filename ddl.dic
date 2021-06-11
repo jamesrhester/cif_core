@@ -12,14 +12,14 @@ data_DDL_DIC
     _dictionary.version           4.0.1
     _dictionary.date              2021-03-01
     _dictionary.uri
-     https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
+        https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic
     _dictionary.ddl_conformance   4.0.1
     _dictionary.namespace         DdlDic
     _description.text
 ;
     This dictionary contains the definitions of attributes that
-         make up the DDLm dictionary definition language. It provides
-         the meta meta data for all CIF dictionaries.
+             make up the DDLm dictionary definition language. It provides
+             the meta meta data for all CIF dictionaries.
 ;
 
 save_ATTRIBUTES
@@ -1810,7 +1810,6 @@ save_type.indices_referenced_id
     form and construction of the indices of entries in values of the present
     item.
 
-
     Meaningful only when the defined item's _type.container attribute has
     value 'Table', and its _type.indices attribute has value 'ByReference'.
 ;
@@ -2019,46 +2018,39 @@ save_units.code
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
-    _import.get                   [{"file":templ_enum.cif "save":units_code}]
+    _import.get                   [{'file':templ_enum.cif  'save':units_code}]
 
 save_
 
     loop_
       _dictionary_valid.application
       _dictionary_valid.attributes
-         [Dictionary  Mandatory]
-                                  ['_dictionary.title'  '_dictionary.class'
-                                    '_dictionary.version'  '_dictionary.date'
-                                    '_dictionary.uri'
-                                    '_dictionary.ddl_conformance'
-                                    '_dictionary.namespace']
-         [Dictionary  Recommended]
-                                  ['_description.text'
-                                    '_dictionary_audit.version'
-                                    '_dictionary_audit.date'
-                                    '_dictionary_audit.revision']
-         [Dictionary  Prohibited]
-                                  [ALIAS  DEFINITION  ENUMERATION  CATEGORY_KEY
-                                    METHOD  NAME  TYPE  IMPORT  UNITS]
-         [Category  Mandatory]
-                                  ['_definition.id'  '_definition.scope'
-                                    '_definition.class'  '_name.category_id'
-                                    '_name.object_id']
-         [Category  Recommended]
-                                  [CATEGORY_KEY  '_category_key.name'
-                                    '_description.text']
-         [Category  Prohibited]
-                                  [ALIAS  DICTIONARY  ENUMERATION  TYPE  UNITS]
-         [Item  Mandatory]
-                                  ['_definition.id'  '_definition.update'
-                                    '_name.object_id'  '_name.category_id'
-                                    '_type.container'  '_type.contents']
-         [Item  Recommended]
-                                  ['_definition.scope'  '_definition.class'
-                                    '_type.source'  '_type.purpose'
-                                    '_description.text'  '_description.common']
-         [Item  Prohibited]
-                                  [DICTIONARY  CATEGORY_KEY]
+         [Dictionary  Mandatory]    ['_dictionary.title'  '_dictionary.class'
+                                     '_dictionary.version'  '_dictionary.date'
+                                     '_dictionary.uri'
+                                     '_dictionary.ddl_conformance'
+                                     '_dictionary.namespace']
+         [Dictionary  Recommended]  ['_description.text'
+                                     '_dictionary_audit.version'
+                                     '_dictionary_audit.date'
+                                     '_dictionary_audit.revision']
+         [Dictionary  Prohibited]   [ALIAS  DEFINITION  ENUMERATION
+                                     CATEGORY_KEY  METHOD  NAME  TYPE  IMPORT
+                                     UNITS]
+         [Category  Mandatory]      ['_definition.id'  '_definition.scope'
+                                     '_definition.class'  '_name.category_id'
+                                     '_name.object_id']
+         [Category  Recommended]    [CATEGORY_KEY  '_category_key.name'
+                                     '_description.text']
+         [Category  Prohibited]     [ALIAS  DICTIONARY  ENUMERATION  TYPE
+                                     UNITS]
+         [Item  Mandatory]          ['_definition.id'  '_definition.update'
+                                     '_name.object_id'  '_name.category_id'
+                                     '_type.container'  '_type.contents']
+         [Item  Recommended]        ['_definition.scope'  '_definition.class'
+                                     '_type.source'  '_type.purpose'
+                                     '_description.text'  '_description.common']
+         [Item  Prohibited]         [DICTIONARY  CATEGORY_KEY]
 
     loop_
       _dictionary_audit.version
