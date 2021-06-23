@@ -18,8 +18,8 @@ data_DDL_DIC
     _description.text
 ;
     This dictionary contains the definitions of attributes that
-             make up the DDLm dictionary definition language. It provides
-             the meta meta data for all CIF dictionaries.
+                 make up the DDLm dictionary definition language. It provides
+                 the meta meta data for all CIF dictionaries.
 ;
 
 save_ATTRIBUTES
@@ -182,33 +182,34 @@ save_definition.class
       _enumeration_set.detail
          Attribute
 ;
-       Item used as an attribute in the definition of other data items in DDLm
-       dictionaries. These items never appear in data instance files.
+         Item used as an attribute in the definition of other data items in
+         DDLm dictionaries. These items never appear in data instance files.
 ;
          Functions
 ;
-       Category of items that are transient function definitions used only in
-       dREL methods scripts. These items never appear in data instance files.
+         Category of items that are transient function definitions used only in
+         dREL methods scripts. These items never appear in data instance files.
 ;
          Datum
 ;
-       Item defined in a domain-specific dictionary. These items appear only in
-       data instance files.
+         Item defined in a domain-specific dictionary. These items appear only
+         in data instance files.
 ;
          Head
 ;
-       Category of items that is the parent of all other categories in the
-       dictionary.
+         Category of items that is the parent of all other categories in the
+         dictionary.
 ;
          Loop
 ;
-       Category of items that in a data file may reside in a loop-list with a
-       key item defined.
+         Category of items that in a data file may reside in a loop-list with a
+         key item defined.
 ;
          Set
 ;
-       Category of items that form a set (but not a loopable list). These items
-       may be referenced as a class of items in a dREL methods expression.
+         Category of items that form a set (but not a loopable list). These
+         items may be referenced as a class of items in a dREL methods
+         expression.
 ;
 
     _enumeration.default          Datum
@@ -1337,28 +1338,28 @@ save_import_details.single_index
       _enumeration_set.detail
          file
 ;
-       URI reference as per RFC 3986 giving the location of the source
-       dictionary.
+         URI reference as per RFC 3986 giving the location of the source
+         dictionary.
 ;
          version
 ;
-       version of source dictionary
+         version of source dictionary
 ;
          save
 ;
-       save framecode of source definition
+         save framecode of source definition
 ;
          mode
 ;
-       mode for including save frames
+         mode for including save frames
 ;
          dupl
 ;
-       option for duplicate entries
+         option for duplicate entries
 ;
          miss
 ;
-       option for missing duplicate entries
+         option for missing duplicate entries
 ;
 
 save_
@@ -1537,31 +1538,32 @@ save_type.container
       _enumeration_set.detail
          Single
 ;
-       single value
+         single value
 ;
          List
 ;
-       ordered set of values. Elements need not be of same contents type.
+         ordered set of values. Elements need not be of same contents type.
 ;
          Array
 ;
-       ordered set of values of the same type. Operations across arrays are
-       equivalent to operations across elements of the Array.
+         ordered set of values of the same type. Operations across arrays are
+         equivalent to operations across elements of the Array.
 ;
          Matrix
 ;
-       ordered set of numerical values for a tensor. Tensor operations such as
-       dot and cross products, are valid cross matrix objects. A matrix with a
-       single dimension is interpreted as a row or column vector as required.
+         ordered set of numerical values for a tensor. Tensor operations such
+         as dot and cross products, are valid cross matrix objects. A matrix
+         with a single dimension is interpreted as a row or column vector as
+         required.
 ;
          Table
 ;
-       An unordered set of id:value elements
+         An unordered set of id:value elements
 ;
          Implied
 ;
-       (For use in the attribute dictionary only). Determined by the values of
-       other attributes.
+         (For use in the attribute dictionary only). Determined by the values
+         of other attributes.
 ;
 
     _enumeration.default          Single
@@ -1612,80 +1614,82 @@ save_type.contents
       _enumeration_set.detail
          Text
 ;
-       case-sensitive sequence of CIF2 characters
+         case-sensitive sequence of CIF2 characters
 ;
          Code
 ;
-       case-insensitive sequence of CIF2 characters containing no ASCII
-       whitespace.
+         case-insensitive sequence of CIF2 characters containing no ASCII
+         whitespace.
 ;
          Name
 ;
-       case-insensitive sequence of ASCII alpha-numeric characters or underscore
+         case-insensitive sequence of ASCII alpha-numeric characters or
+         underscore
 ;
          Tag
 ;
-       case-insensitive CIF2 character sequence with leading underscore and no
-       ASCII whitespace
+         case-insensitive CIF2 character sequence with leading underscore and
+         no ASCII whitespace
 ;
          Uri
 ;
-       Uniform Resource Identifier reference as defined in RFC 3986 Section 4.1
+         Uniform Resource Identifier reference as defined in RFC 3986 Section
+         4.1
 ;
          Date
 ;
-       ISO standard date format <yyyy>-<mm>-<dd>. Use DateTime for all new
-       dictionaries
+         ISO standard date format <yyyy>-<mm>-<dd>. Use DateTime for all new
+         dictionaries
 ;
          DateTime
 ;
-       A timestamp. Text formats must use date-time or full-date productions of
-       RFC 3339 ABNF
+         A timestamp. Text formats must use date-time or full-date productions
+         of RFC 3339 ABNF
 ;
          Version
 ;
-       version digit string of the form <major>.<version>.<update>
+         version digit string of the form <major>.<version>.<update>
 ;
          Dimension
 ;
-       Size of an Array/Matrix/List expressed as a text string. The text string
-       itself consists of zero or more non-negative integers separated by
-       commas placed within bounding square brackets. Empty square brackets
-       represent a list of unknown size
+         Size of an Array/Matrix/List expressed as a text string. The text
+         string itself consists of zero or more non-negative integers separated
+         by commas placed within bounding square brackets. Empty square
+         brackets represent a list of unknown size
 ;
          Range
 ;
-       inclusive range of numerical values min:max
+         inclusive range of numerical values min:max
 ;
          Integer
 ;
-       positive or negative integer number
+         positive or negative integer number
 ;
          Real
 ;
-       floating-point real number
+         floating-point real number
 ;
          Imag
 ;
-       floating-point imaginary number
+         floating-point imaginary number
 ;
          Complex
 ;
-       a complex number
+         a complex number
 ;
          Symop
 ;
-       a string composed of an integer optionally followed by an underscore or
-       space and three or more digits
+         a string composed of an integer optionally followed by an underscore
+         or space and three or more digits
 ;
          Implied
 ;
-       implied by the context of the attribute
+         implied by the context of the attribute
 ;
          ByReference
 ;
-       The contents have the same form as those of the attribute referenced by
-       _type.contents_referenced_id.
+         The contents have the same form as those of the attribute referenced
+         by _type.contents_referenced_id.
 ;
 
     _enumeration.default          Text
@@ -1770,29 +1774,29 @@ save_type.indices
       _enumeration_set.detail
          Text
 ;
-       A case-sensitive sequence of CIF2 characters
+         A case-sensitive sequence of CIF2 characters
 ;
          Code
 ;
-       case-insensitive sequence of CIF2 characters containing no ASCII
-       whitespace.
+         case-insensitive sequence of CIF2 characters containing no ASCII
+         whitespace.
 ;
          Date
 ;
-       ISO date format yyyy-mm-dd
+         ISO date format yyyy-mm-dd
 ;
          Uri
 ;
-       a Uniform Resource Identifier string, per RFC 3986
+         a Uniform Resource Identifier string, per RFC 3986
 ;
          Version
 ;
-       version digit string of the form <major>.<version>.<update>
+         version digit string of the form <major>.<version>.<update>
 ;
          ByReference
 ;
-       Indices have the same form as the contents of the attribute identified
-       by _type.indices_referenced_id
+         Indices have the same form as the contents of the attribute identified
+         by _type.indices_referenced_id
 ;
 
     _enumeration.default          Text
@@ -1844,93 +1848,94 @@ save_type.purpose
       _enumeration_set.detail
          Import
 ;
-       >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type the
-       SPECIAL attribute "_import.get" that is present in dictionaries to
-       instigate the importation of external dictionary definitions.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type the
+         SPECIAL attribute "_import.get" that is present in dictionaries to
+         instigate the importation of external dictionary definitions.
 ;
          Method
 ;
-       >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type the
-       attribute "_method.expression" that is present in dictionary definitions
-       to provide the text method expressing the defined item in terms of other
-       defined items.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type the
+         attribute "_method.expression" that is present in dictionary
+         definitions to provide the text method expressing the defined item in
+         terms of other defined items.
 ;
          Audit
 ;
-       >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type
-       attributes employed to record the audit definition information (creation
-       date, update version and cross reference codes) of items, categories and
-       files.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type
+         attributes employed to record the audit definition information
+         (creation date, update version and cross reference codes) of items,
+         categories and files.
 ;
          Identify
 ;
-       >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type
-       attributes that identify an item tag (or part thereof) or external
-       location.
+         >>> Applied ONLY in the DDLm Reference Dictionary <<< Used to type
+         attributes that identify an item tag (or part thereof) or external
+         location.
 ;
          Describe
 ;
-       Used to type items with values that are descriptive text intended for
-       human interpretation.
+         Used to type items with values that are descriptive text intended for
+         human interpretation.
 ;
          Encode
 ;
-       Used to type items with values that are text or codes that are formatted
-       to be machine parsable.
+         Used to type items with values that are text or codes that are
+         formatted to be machine parsable.
 ;
          State
 ;
-       Used to type items with values that are restricted to codes present in
-       their "enumeration_set.state" lists.
+         Used to type items with values that are restricted to codes present in
+         their "enumeration_set.state" lists.
 ;
          Key
 ;
-       Used to type an item with a value that is unique within the looped list
-       of these items, and does not contain encoded information.
+         Used to type an item with a value that is unique within the looped
+         list of these items, and does not contain encoded information.
 ;
          Link
 ;
-       Used to type an item that acts as a foreign key between two categories.
-       The definition of the item must additionally contain the attribute
-       "_name.linked_item_id" specifying the data name of the item with unique
-       values in the linked category. The values of the defined item are drawn
-       from the set of values in the referenced item. Cross referencing items
-       from the same category is allowed.
+         Used to type an item that acts as a foreign key between two
+         categories. The definition of the item must additionally contain the
+         attribute "_name.linked_item_id" specifying the data name of the item
+         with unique values in the linked category. The values of the defined
+         item are drawn from the set of values in the referenced item. Cross
+         referencing items from the same category is allowed.
 ;
          Composite
 ;
-       Used to type items with value strings composed of separate parts. These
-       will usually need to be separated and parsed for complete interpretation
-       and application.
+         Used to type items with value strings composed of separate parts.
+         These will usually need to be separated and parsed for complete
+         interpretation and application.
 ;
          Number
 ;
-       Used to type items that are numerical and exact (i.e. no standard
-       uncertainty value).
+         Used to type items that are numerical and exact (i.e. no standard
+         uncertainty value).
 ;
          Measurand
 ;
-       Used to type an item with a numerically estimated value that has been
-       recorded by measurement or derivation. A data name definition for the
-       standard uncertainty (SU) of this item must be provided in a separate
-       definition with _type.purpose of 'SU'. The value of a measurand item
-       should be accompanied by a value of its associated SU item, either: 1)
-       integrated with the measurand value in a manner characteristic of the
-       data format; or 2) as a separate, explicit value for the associated SU
-       item. These alternatives are semantically equivalent.
+         Used to type an item with a numerically estimated value that has been
+         recorded by measurement or derivation. A data name definition for the
+         standard uncertainty (SU) of this item must be provided in a separate
+         definition with _type.purpose of 'SU'. The value of a measurand item
+         should be accompanied by a value of its associated SU item, either: 1)
+         integrated with the measurand value in a manner characteristic of the
+         data format; or 2) as a separate, explicit value for the associated SU
+         item. These alternatives are semantically equivalent.
 ;
          SU
 ;
-       Used to type an item with a numerical value that is the standard
-       uncertainty of another dataname. The definition of an SU item must
-       include the attribute "_name.linked_item_id" which explicitly identifies
-       the associated measurand item. SU values must be non-negative.
+         Used to type an item with a numerical value that is the standard
+         uncertainty of another dataname. The definition of an SU item must
+         include the attribute "_name.linked_item_id" which explicitly
+         identifies the associated measurand item. SU values must be
+         non-negative.
 ;
          Internal
 ;
-       Used to type items that serve only internal purposes of the dictionary
-       in which they appear. The particular purpose served is not defined by
-       this state.
+         Used to type items that serve only internal purposes of the dictionary
+         in which they appear. The particular purpose served is not defined by
+         this state.
 ;
 
     _enumeration.default          Describe
@@ -1959,29 +1964,31 @@ save_type.source
       _enumeration_set.detail
          Recorded
 ;
-       A value (numerical or otherwise) recorded by observation or measurement
-       during the experimental collection of data. This item is PRIMITIVE.
+         A value (numerical or otherwise) recorded by observation or
+         measurement during the experimental collection of data. This item is
+         PRIMITIVE.
 ;
          Assigned
 ;
-       A value (numerical or otherwise) assigned as part of the data
-       collection, analysis or modelling required for a specific domain
-       instance. These assignments often represent a decision made that
-       determines the course of the experiment (and therefore may be deemed
-       PRIMITIVE) or a particular choice in the way the data was analysed (and
-       therefore may be considered NOT PRIMITIVE).
+         A value (numerical or otherwise) assigned as part of the data
+         collection, analysis or modelling required for a specific domain
+         instance. These assignments often represent a decision made that
+         determines the course of the experiment (and therefore may be deemed
+         PRIMITIVE) or a particular choice in the way the data was analysed
+         (and therefore may be considered NOT PRIMITIVE).
 ;
          Related
 ;
-       A value or tag used in the construction of looped lists of data.
-       Typically identifying an item whose unique value is the reference key
-       for a loop category and/or an item which has values in common with those
-       of another loop category and is considered a Link between these lists.
+         A value or tag used in the construction of looped lists of data.
+         Typically identifying an item whose unique value is the reference key
+         for a loop category and/or an item which has values in common with
+         those of another loop category and is considered a Link between these
+         lists.
 ;
          Derived
 ;
-       A quantity derived from other data items within the domain instance.
-       This item is NOT PRIMITIVE.
+         A quantity derived from other data items within the domain instance.
+         This item is NOT PRIMITIVE.
 ;
 
     _enumeration.default          Assigned
@@ -2018,6 +2025,7 @@ save_units.code
     _type.source                  Assigned
     _type.container               Single
     _type.contents                Code
+
     _import.get                   [{'file':templ_enum.cif  'save':units_code}]
 
 save_

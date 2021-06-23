@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic
     _description.text
 ;
     The CIF_CORE dictionary records all the CORE data items defined
-        and used with in the Crystallographic Information Framework (CIF).
+            and used with in the Crystallographic Information Framework (CIF).
 ;
 
 save_CIF_CORE
@@ -114,6 +114,32 @@ save_diffrn.ambient_pressure
 
 save_
 
+save_diffrn.ambient_pressure_su
+
+    _definition.id                '_diffrn.ambient_pressure_su'
+
+    loop_
+      _alias.definition_id
+         '_diffrn_ambient_pressure_su'
+         '_diffrn.ambient_pressure_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the mean hydrostatic pressure
+    at which intensities were measured.
+;
+    _name.category_id             diffrn
+    _name.object_id               ambient_pressure_su
+    _name.linked_item_id          '_diffrn.ambient_pressure'
+    _type.purpose                 SU
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   kilopascals
+
+save_
+
 save_diffrn.ambient_pressure_gt
 
     _definition.id                '_diffrn.ambient_pressure_gt'
@@ -160,32 +186,6 @@ save_diffrn.ambient_pressure_lt
 
 save_
 
-save_diffrn.ambient_pressure_su
-
-    _definition.id                '_diffrn.ambient_pressure_su'
-
-    loop_
-      _alias.definition_id
-         '_diffrn_ambient_pressure_su'
-         '_diffrn.ambient_pressure_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the mean hydrostatic pressure
-    at which intensities were measured.
-;
-    _name.category_id             diffrn
-    _name.object_id               ambient_pressure_su
-    _name.linked_item_id          '_diffrn.ambient_pressure'
-    _type.purpose                 SU
-    _type.source                  Recorded
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   kilopascals
-
-save_
-
 save_diffrn.ambient_temperature
 
     _definition.id                '_diffrn.ambient_temperature'
@@ -208,6 +208,33 @@ save_diffrn.ambient_temperature
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
+    _units.code                   kelvins
+
+save_
+
+save_diffrn.ambient_temperature_su
+
+    _definition.id                '_diffrn.ambient_temperature_su'
+
+    loop_
+      _alias.definition_id
+         '_diffrn_ambient_temperature_su'
+         '_diffrn_ambient_temp_su'
+         '_diffrn.ambient_temp_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the mean temperature
+    at which intensities were measured.
+;
+    _name.category_id             diffrn
+    _name.object_id               ambient_temperature_su
+    _name.linked_item_id          '_diffrn.ambient_temperature'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
     _units.code                   kelvins
 
 save_
@@ -290,33 +317,6 @@ save_diffrn.ambient_temperature_lt
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
-    _units.code                   kelvins
-
-save_
-
-save_diffrn.ambient_temperature_su
-
-    _definition.id                '_diffrn.ambient_temperature_su'
-
-    loop_
-      _alias.definition_id
-         '_diffrn_ambient_temperature_su'
-         '_diffrn_ambient_temp_su'
-         '_diffrn.ambient_temp_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the mean temperature
-    at which intensities were measured.
-;
-    _name.category_id             diffrn
-    _name.object_id               ambient_temperature_su
-    _name.linked_item_id          '_diffrn.ambient_temperature'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kelvins
 
 save_
@@ -437,7 +437,7 @@ save_diffrn.special_details
     _description_example.case
 ;
     The results may not be entirely reliable as the measurement was
-         made during a heat wave when the air-conditioning had failed.
+             made during a heat wave when the air-conditioning had failed.
 ;
 
 save_
@@ -848,32 +848,32 @@ save_diffrn_measurement.specimen_attachment_type
       _enumeration_set.detail
          epoxy
 ;
-       An epoxy glue
+         An epoxy glue
 ;
          oil
 ;
-       An oil
+         An oil
 ;
          grease
 ;
-       A type of grease, for example hydrocarbon or silicone grease
+         A type of grease, for example hydrocarbon or silicone grease
 ;
          frozen_liquid
 ;
-       A frozen liquid, not water or oil
+         A frozen liquid, not water or oil
 ;
          other
 ;
-       A method not listed here
+         A method not listed here
 ;
          ice
 ;
-       The specimen is frozen in place using water ice
+         The specimen is frozen in place using water ice
 ;
          mechanical
 ;
-       The specimen is held in place by mechanical forces, e.g. capillary or
-       pressure cell
+         The specimen is held in place by mechanical forces, e.g. capillary or
+         pressure cell
 ;
 
 save_
@@ -1170,9 +1170,7 @@ save_diffrn_orient_refln.angle_chi
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_chi
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':orient_angle}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
 
 save_
 
@@ -1183,9 +1181,7 @@ save_diffrn_orient_refln.angle_kappa
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_kappa
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':orient_angle}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
 
 save_
 
@@ -1196,9 +1192,7 @@ save_diffrn_orient_refln.angle_omega
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_omega
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':orient_angle}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
 
 save_
 
@@ -1209,9 +1203,7 @@ save_diffrn_orient_refln.angle_phi
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_phi
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':orient_angle}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
 
 save_
 
@@ -1222,9 +1214,7 @@ save_diffrn_orient_refln.angle_psi
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_psi
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':orient_angle}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
 
 save_
 
@@ -1235,9 +1225,7 @@ save_diffrn_orient_refln.angle_theta
     _name.category_id             diffrn_orient_refln
     _name.object_id               angle_theta
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':orient_angle}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':orient_angle}]
 
 save_
 
@@ -1273,9 +1261,7 @@ save_diffrn_orient_refln.index_h
     _name.category_id             diffrn_orient_refln
     _name.object_id               index_h
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -1286,9 +1272,7 @@ save_diffrn_orient_refln.index_k
     _name.category_id             diffrn_orient_refln
     _name.object_id               index_k
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -1299,9 +1283,7 @@ save_diffrn_orient_refln.index_l
     _name.category_id             diffrn_orient_refln
     _name.object_id               index_l
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -1839,9 +1821,7 @@ save_diffrn_refln.counts_bg_1
     _name.category_id             diffrn_refln
     _name.object_id               counts_bg_1
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':diffr_counts}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
 
 save_
 
@@ -1852,9 +1832,7 @@ save_diffrn_refln.counts_bg_2
     _name.category_id             diffrn_refln
     _name.object_id               counts_bg_2
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':diffr_counts}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
 
 save_
 
@@ -1865,9 +1843,7 @@ save_diffrn_refln.counts_net
     _name.category_id             diffrn_refln
     _name.object_id               counts_net
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':diffr_counts}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
 
 save_
 
@@ -1878,9 +1854,7 @@ save_diffrn_refln.counts_peak
     _name.category_id             diffrn_refln
     _name.object_id               counts_peak
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':diffr_counts}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
 
 save_
 
@@ -1891,9 +1865,7 @@ save_diffrn_refln.counts_total
     _name.category_id             diffrn_refln
     _name.object_id               counts_total
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':diffr_counts}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':diffr_counts}]
 
 save_
 
@@ -1991,9 +1963,7 @@ save_diffrn_refln.index_h
     _name.category_id             diffrn_refln
     _name.object_id               index_h
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -2004,9 +1974,7 @@ save_diffrn_refln.index_k
     _name.category_id             diffrn_refln
     _name.object_id               index_k
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -2017,9 +1985,7 @@ save_diffrn_refln.index_l
     _name.category_id             diffrn_refln
     _name.object_id               index_l
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -2415,9 +2381,7 @@ save_diffrn_reflns.limit_h_max
     _name.category_id             diffrn_reflns
     _name.object_id               limit_h_max
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -2428,9 +2392,7 @@ save_diffrn_reflns.limit_h_min
     _name.category_id             diffrn_reflns
     _name.object_id               limit_h_min
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -2441,9 +2403,7 @@ save_diffrn_reflns.limit_k_max
     _name.category_id             diffrn_reflns
     _name.object_id               limit_k_max
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -2454,9 +2414,7 @@ save_diffrn_reflns.limit_k_min
     _name.category_id             diffrn_reflns
     _name.object_id               limit_k_min
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -2467,9 +2425,7 @@ save_diffrn_reflns.limit_l_max
     _name.category_id             diffrn_reflns
     _name.object_id               limit_l_max
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -2480,9 +2436,7 @@ save_diffrn_reflns.limit_l_min
     _name.category_id             diffrn_reflns
     _name.object_id               limit_l_min
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -3712,9 +3666,7 @@ save_diffrn_standard_refln.index_h
     _name.category_id             diffrn_standard_refln
     _name.object_id               index_h
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -3725,9 +3677,7 @@ save_diffrn_standard_refln.index_k
     _name.category_id             diffrn_standard_refln
     _name.object_id               index_k
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -3738,9 +3688,7 @@ save_diffrn_standard_refln.index_l
     _name.category_id             diffrn_standard_refln
     _name.object_id               index_l
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -3787,14 +3735,14 @@ save_refln.a_calc
       _method.expression
          Definition
 ;
-            If (_diffrn_radiation.probe == "neutron")  _units.code =
-       "femtometres" Else If (_diffrn_radiation.probe == "electron")
-       _units.code =  "volts" Else
-       _units.code =  "electrons"
+              If (_diffrn_radiation.probe == "neutron")  _units.code =
+         "femtometres" Else If (_diffrn_radiation.probe == "electron")
+         _units.code =  "volts" Else
+         _units.code =  "electrons"
 ;
          Evaluation
 ;
-       _refln.A_calc =  Real ( _refln.F_complex )
+         _refln.A_calc =  Real ( _refln.F_complex )
 ;
 
 save_
@@ -3845,14 +3793,14 @@ save_refln.b_calc
       _method.expression
          Definition
 ;
-            If (_diffrn_radiation.probe == "neutron")  _units.code =
-       "femtometres" Else If (_diffrn_radiation.probe == "electron")
-       _units.code =  "volts" Else
-       _units.code =  "electrons"
+              If (_diffrn_radiation.probe == "neutron")  _units.code =
+         "femtometres" Else If (_diffrn_radiation.probe == "electron")
+         _units.code =  "volts" Else
+         _units.code =  "electrons"
 ;
          Evaluation
 ;
-       _refln.B_calc =  Imag ( _refln.F_complex )
+         _refln.B_calc =  Imag ( _refln.F_complex )
 ;
 
 save_
@@ -3955,14 +3903,14 @@ save_refln.f_calc
       _method.expression
          Definition
 ;
-            If (_diffrn_radiation.probe == "neutron")  _units.code =
-       "femtometres" Else If (_diffrn_radiation.probe == "electron")
-       _units.code =  "volts" Else
-       _units.code =  "electrons"
+              If (_diffrn_radiation.probe == "neutron")  _units.code =
+         "femtometres" Else If (_diffrn_radiation.probe == "electron")
+         _units.code =  "volts" Else
+         _units.code =  "electrons"
 ;
          Evaluation
 ;
-       _refln.F_calc  =   Magn ( _refln.F_complex )
+         _refln.F_calc  =   Magn ( _refln.F_complex )
 ;
 
 save_
@@ -3989,31 +3937,31 @@ save_refln.f_complex
       _method.expression
          Definition
 ;
-            If (_diffrn_radiation.probe == "neutron")  _units.code =
-       "femtometres" Else If (_diffrn_radiation.probe == "electron")
-       _units.code =  "volts" Else
-       _units.code =  "electrons"
+              If (_diffrn_radiation.probe == "neutron")  _units.code =
+         "femtometres" Else If (_diffrn_radiation.probe == "electron")
+         _units.code =  "volts" Else
+         _units.code =  "electrons"
 ;
          Evaluation
 ;
-       With r  as  refln
+         With r  as  refln
 
-          fc  =   Complex (0., 0.)
-          h   =   r.hkl
+            fc  =   Complex (0., 0.)
+            h   =   r.hkl
 
-       Loop a  as  atom_site  {
+         Loop a  as  atom_site  {
 
-              f  =   a.site_symmetry_multiplicity * a.occupancy * (
-                             r.form_factor_table [a.type_symbol]      +
-                            _atom_type_scat[a.type_symbol].dispersion  )
+                f  =   a.site_symmetry_multiplicity * a.occupancy * (
+                               r.form_factor_table [a.type_symbol]      +
+                              _atom_type_scat[a.type_symbol].dispersion  )
 
-          Loop s  as  space_group_symop  {
+            Loop s  as  space_group_symop  {
 
-              t   =  Exp(-h * s.R * a.tensor_beta * s.RT * h)
+                t   =  Exp(-h * s.R * a.tensor_beta * s.RT * h)
 
-              fc +=  f * t * ExpImag(TwoPi *( h *( s.R * a.fract_xyz + s.T)))
-       }  }
-              _refln.F_complex  =   fc / _space_group.multiplicity
+                fc +=  f * t * ExpImag(TwoPi *( h *( s.R * a.fract_xyz + s.T)))
+         }  }
+                _refln.F_complex  =   fc / _space_group.multiplicity
 ;
 
 save_
@@ -4311,9 +4259,7 @@ save_refln.index_h
     _name.category_id             refln
     _name.object_id               index_h
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -4324,9 +4270,7 @@ save_refln.index_k
     _name.category_id             refln
     _name.object_id               index_k
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -4337,9 +4281,7 @@ save_refln.index_l
     _name.category_id             refln
     _name.object_id               index_l
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -4870,9 +4812,7 @@ save_reflns.limit_h_max
     _name.category_id             reflns
     _name.object_id               limit_h_max
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -4883,9 +4823,7 @@ save_reflns.limit_h_min
     _name.category_id             reflns
     _name.object_id               limit_h_min
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -4896,9 +4834,7 @@ save_reflns.limit_k_max
     _name.category_id             reflns
     _name.object_id               limit_k_max
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -4909,9 +4845,7 @@ save_reflns.limit_k_min
     _name.category_id             reflns
     _name.object_id               limit_k_min
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -4922,9 +4856,7 @@ save_reflns.limit_l_max
     _name.category_id             reflns
     _name.object_id               limit_l_max
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -4935,9 +4867,7 @@ save_reflns.limit_l_min
     _name.category_id             reflns
     _name.object_id               limit_l_min
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -7358,9 +7288,7 @@ save_cell_measurement_refln.index_h
     _name.category_id             cell_measurement_refln
     _name.object_id               index_h
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -7371,9 +7299,7 @@ save_cell_measurement_refln.index_k
     _name.category_id             cell_measurement_refln
     _name.object_id               index_k
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -7384,9 +7310,7 @@ save_cell_measurement_refln.index_l
     _name.category_id             cell_measurement_refln
     _name.object_id               index_l
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -7452,37 +7376,37 @@ save_chemical.absolute_configuration
       _enumeration_set.detail
          rm
 ;
-       'reference molecule' Absolute configuration established by the structure
-       determination of a compound containing a chiral reference molecule of
-       known absolute configuration.
+         'reference molecule' Absolute configuration established by the
+         structure determination of a compound containing a chiral reference
+         molecule of known absolute configuration.
 ;
          ad
 ;
-       'anomalous dispersion' Absolute configuration established by a-d effects
-       in diffraction measurements on the crystal.
+         'anomalous dispersion' Absolute configuration established by a-d
+         effects in diffraction measurements on the crystal.
 ;
          rmad
 ;
-       'rm + ad' Absolute configuration established by the structure
-       determination of a compound containing a chiral reference molecule of
-       known absolute configuration and confirmed by a-d effects in diffraction
-       measurements on the crystal.
+         'rm + ad' Absolute configuration established by the structure
+         determination of a compound containing a chiral reference molecule of
+         known absolute configuration and confirmed by a-d effects in
+         diffraction measurements on the crystal.
 ;
          syn
 ;
-       'synthetic' Absolute configuration has not been established by
-       anomalous-dispersion effects in diffraction measurements on the crystal.
-       The enantiomer has been assigned by reference to an unchanging chiral
-       centre in the synthetic procedure.
+         'synthetic' Absolute configuration has not been established by
+         anomalous-dispersion effects in diffraction measurements on the
+         crystal. The enantiomer has been assigned by reference to an
+         unchanging chiral centre in the synthetic procedure.
 ;
          unk
 ;
-       'unknown' No firm chemical or a-d evidence for an assignment is
-       available. An arbitrary choice of enantiomer has been made.
+         'unknown' No firm chemical or a-d evidence for an assignment is
+         available. An arbitrary choice of enantiomer has been made.
 ;
          .
 ;
-       inapplicable
+         inapplicable
 ;
 
 save_
@@ -7557,22 +7481,22 @@ save_chemical.enantioexcess_bulk_technique
       _enumeration_set.detail
          OA
 ;
-       Enantioexcess determined by measurement of the specific rotation of the
-       optical activity of the bulk compound in solution.
+         Enantioexcess determined by measurement of the specific rotation of
+         the optical activity of the bulk compound in solution.
 ;
          CD
 ;
-       Enantioexcess determined by measurement of the visible/near UV circular
-       dichroism spectrum of the bulk compound in solution.
+         Enantioexcess determined by measurement of the visible/near UV
+         circular dichroism spectrum of the bulk compound in solution.
 ;
          EC
 ;
-       Enantioexcess determined by enantioselective chromatography of the bulk
-       compound in solution.
+         Enantioexcess determined by enantioselective chromatography of the
+         bulk compound in solution.
 ;
          other
 ;
-       Enantioexcess determined by a technique not in this list.
+         Enantioexcess determined by a technique not in this list.
 ;
 
 save_
@@ -7625,17 +7549,17 @@ save_chemical.enantioexcess_crystal_technique
       _enumeration_set.detail
          CD
 ;
-       Enantioexcess determined by measurement of the visible/near UV circular
-       dichroism spectrum of the crystal taken into solution.
+         Enantioexcess determined by measurement of the visible/near UV
+         circular dichroism spectrum of the crystal taken into solution.
 ;
          EC
 ;
-       Enantioexcess determined by enantioselective chromatography of the
-       crystal taken into solution.
+         Enantioexcess determined by enantioselective chromatography of the
+         crystal taken into solution.
 ;
          other
 ;
-       Enantioexcess determined by a technique not in this list.
+         Enantioexcess determined by a technique not in this list.
 ;
 
 save_
@@ -7662,7 +7586,7 @@ save_chemical.identifier_inchi
     _type.container               Single
     _type.contents                Text
     _description_example.case
-        "InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H'"
+        InChI=1/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H'
     _description_example.detail   naphthalene
 
 save_
@@ -7970,6 +7894,32 @@ save_chemical.temperature_decomposition
 
 save_
 
+save_chemical.temperature_decomposition_su
+
+    _definition.id                '_chemical.temperature_decomposition_su'
+
+    loop_
+      _alias.definition_id
+         '_chemical_temperature_decomposition_su'
+         '_chemical.temperature_decomposition_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the temperature at which
+    a crystalline solid decomposes.
+;
+    _name.category_id             chemical
+    _name.object_id               temperature_decomposition_su
+    _name.linked_item_id          '_chemical.temperature_decomposition'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   kelvins
+
+save_
+
 save_chemical.temperature_decomposition_gt
 
     _definition.id                '_chemical.temperature_decomposition_gt'
@@ -8012,32 +7962,6 @@ save_chemical.temperature_decomposition_lt
 
 save_
 
-save_chemical.temperature_decomposition_su
-
-    _definition.id                '_chemical.temperature_decomposition_su'
-
-    loop_
-      _alias.definition_id
-         '_chemical_temperature_decomposition_su'
-         '_chemical.temperature_decomposition_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the temperature at which
-    a crystalline solid decomposes.
-;
-    _name.category_id             chemical
-    _name.object_id               temperature_decomposition_su
-    _name.linked_item_id          '_chemical.temperature_decomposition'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   kelvins
-
-save_
-
 save_chemical.temperature_sublimation
 
     _definition.id                '_chemical.temperature_sublimation'
@@ -8054,6 +7978,32 @@ save_chemical.temperature_sublimation
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
+    _units.code                   kelvins
+
+save_
+
+save_chemical.temperature_sublimation_su
+
+    _definition.id                '_chemical.temperature_sublimation_su'
+
+    loop_
+      _alias.definition_id
+         '_chemical_temperature_sublimation_su'
+         '_chemical.temperature_sublimation_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the temperature at which
+    a crystalline solid sublimates.
+;
+    _name.category_id             chemical
+    _name.object_id               temperature_sublimation_su
+    _name.linked_item_id          '_chemical.temperature_sublimation'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
     _units.code                   kelvins
 
 save_
@@ -8096,32 +8046,6 @@ save_chemical.temperature_sublimation_lt
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
-    _units.code                   kelvins
-
-save_
-
-save_chemical.temperature_sublimation_su
-
-    _definition.id                '_chemical.temperature_sublimation_su'
-
-    loop_
-      _alias.definition_id
-         '_chemical_temperature_sublimation_su'
-         '_chemical.temperature_sublimation_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the temperature at which
-    a crystalline solid sublimates.
-;
-    _name.category_id             chemical
-    _name.object_id               temperature_sublimation_su
-    _name.linked_item_id          '_chemical.temperature_sublimation'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kelvins
 
 save_
@@ -8950,6 +8874,32 @@ save_exptl_crystal.density_meas
 
 save_
 
+save_exptl_crystal.density_meas_su
+
+    _definition.id                '_exptl_crystal.density_meas_su'
+
+    loop_
+      _alias.definition_id
+         '_exptl_crystal_density_meas_su'
+         '_exptl_crystal.density_meas_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the crystal density measured
+    using standard chemical and physical methods.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               density_meas_su
+    _name.linked_item_id          '_exptl_crystal.density_meas'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   megagrams_per_metre_cubed
+
+save_
+
 save_exptl_crystal.density_meas_gt
 
     _definition.id                '_exptl_crystal.density_meas_gt'
@@ -8998,32 +8948,6 @@ save_exptl_crystal.density_meas_lt
 
 save_
 
-save_exptl_crystal.density_meas_su
-
-    _definition.id                '_exptl_crystal.density_meas_su'
-
-    loop_
-      _alias.definition_id
-         '_exptl_crystal_density_meas_su'
-         '_exptl_crystal.density_meas_esd'
-
-    _definition.update            2021-03-03
-    _description.text
-;
-    Standard uncertainty of the crystal density measured
-    using standard chemical and physical methods.
-;
-    _name.category_id             exptl_crystal
-    _name.object_id               density_meas_su
-    _name.linked_item_id          '_exptl_crystal.density_meas'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
-    _units.code                   megagrams_per_metre_cubed
-
-save_
-
 save_exptl_crystal.density_meas_temp
 
     _definition.id                '_exptl_crystal.density_meas_temp'
@@ -9040,6 +8964,32 @@ save_exptl_crystal.density_meas_temp
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
+    _units.code                   kelvins
+
+save_
+
+save_exptl_crystal.density_meas_temp_su
+
+    _definition.id                '_exptl_crystal.density_meas_temp_su'
+
+    loop_
+      _alias.definition_id
+         '_exptl_crystal_density_meas_temp_su'
+         '_exptl_crystal.density_meas_temp_esd'
+
+    _definition.update            2012-11-22
+    _description.text
+;
+    Standard uncertainty of the temperature at
+    which _exptl_crystal.density_meas was determined.
+;
+    _name.category_id             exptl_crystal
+    _name.object_id               density_meas_temp_su
+    _name.linked_item_id          '_exptl_crystal.density_meas_temp'
+    _type.purpose                 SU
+    _type.source                  Related
+    _type.container               Single
+    _type.contents                Real
     _units.code                   kelvins
 
 save_
@@ -9086,32 +9036,6 @@ save_exptl_crystal.density_meas_temp_lt
     _type.container               Single
     _type.contents                Real
     _enumeration.range            0.0:
-    _units.code                   kelvins
-
-save_
-
-save_exptl_crystal.density_meas_temp_su
-
-    _definition.id                '_exptl_crystal.density_meas_temp_su'
-
-    loop_
-      _alias.definition_id
-         '_exptl_crystal_density_meas_temp_su'
-         '_exptl_crystal.density_meas_temp_esd'
-
-    _definition.update            2012-11-22
-    _description.text
-;
-    Standard uncertainty of the temperature at
-    which _exptl_crystal.density_meas was determined.
-;
-    _name.category_id             exptl_crystal
-    _name.object_id               density_meas_temp_su
-    _name.linked_item_id          '_exptl_crystal.density_meas_temp'
-    _type.purpose                 SU
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Real
     _units.code                   kelvins
 
 save_
@@ -9604,9 +9528,7 @@ save_exptl_crystal_face.index_h
     _name.category_id             exptl_crystal_face
     _name.object_id               index_h
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -9617,9 +9539,7 @@ save_exptl_crystal_face.index_k
     _name.category_id             exptl_crystal_face
     _name.object_id               index_k
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -9630,9 +9550,7 @@ save_exptl_crystal_face.index_l
     _name.category_id             exptl_crystal_face
     _name.object_id               index_l
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Miller_index}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Miller_index}]
 
 save_
 
@@ -10394,7 +10312,7 @@ save_space_group_generator.xyz
     _description_example.detail
 ;
     c glide reflection through the plane (x,1/4,z)
-              chosen as one of the generators of the space group
+                  chosen as one of the generators of the space group
 ;
 
 save_
@@ -10799,293 +10717,18 @@ save_space_group_wyckoff.site_symmetry
       _description_example.detail
          2.22
 ;
-       position 2b in space group No. 94, P 42 21 2
+         position 2b in space group No. 94, P 42 21 2
 ;
          42.2
 ;
-       position 6b in space group No. 222, P n -3 n
+         position 6b in space group No. 222, P n -3 n
 ;
          2..
 ;
-       Site symmetry for the Wyckoff position 96f in space group No.
-        228, F d -3 c.  The site-symmetry group is isomorphic to the
-        point group 2 with the twofold axis along one of the {100}
-        directions.
-;
-
-save_
-
-save_FUNCTION
-
-    _definition.id                FUNCTION
-    _definition.scope             Category
-    _definition.class             Functions
-    _definition.update            2012-12-18
-    _description.text
-;
-    The crystallographic functions the invoked in the definition
-    methods of CORE STRUCTURE data items defined and used with in
-    the Crystallographic Information Framework (CIF).
-;
-    _name.category_id             CIF_CORE
-    _name.object_id               FUNCTION
-
-save_
-
-save_function.atomtype
-
-    _definition.id                '_function.AtomType'
-    _definition.update            2013-04-17
-    _description.text
-;
-    The function
-                  r  =  AtomType( s )
-
-    returns an atom type symbol (element name) from the atom site label.
-;
-    _name.category_id             function
-    _name.object_id               AtomType
-    _type.purpose                 Encode
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Code
-    _method.expression
-;
-    Function AtomType( s :[Single, Code])  {  # atom label
-
-       m = Len(s)
-       n = 1
-       If (m > 1 and s[1] not in '0123456789') n = 2
-       If (m > 2 and s[2]     in '+-'        ) n = 3
-       If (m > 3 and s[3]     in '+-'        ) n = 4
-
-                AtomType =  s[0:n]
-    }
-;
-
-save_
-
-save_function.closest
-
-    _definition.id                '_function.Closest'
-    _definition.update            2021-03-03
-    _description.text
-;
-    The function
-                  d  =  Closest( v, w )
-
-    returns the cell translation vector required to obtain the
-    closest cell-translated occurrence of the vector V to the vector
-    W.
-;
-    _name.category_id             function
-    _name.object_id               Closest
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   none
-    _method.expression
-;
-    Function Closest( v :[Matrix, Real],   # coord vector to be cell translated
-                      w :[Matrix, Real]) { # target vector
-
-           d  =  v - w
-           Closest  =  Int( Mod( 99.5 + d, 1.0 ) - d )
-    }
-;
-
-save_
-
-save_function.seitzfromjones
-
-    _definition.id                '_function.SeitzFromJones'
-    _definition.update            2021-03-01
-    _description.text
-;
-    The function
-                  s  =  SeitzFromJones( j )
-
-    returns a 4x4 Seitz matrix from the Jones faithful representation of
-    the equivalent position which is a character string e.g. 1/2+x,-x,z.
-;
-    _name.category_id             function
-    _name.object_id               SeitzFromJones
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[4,4]'
-    _type.contents                Real
-    _units.code                   none
-    _method.expression
-;
-     Function SeitzFromJones( j :[Single, Text])  { # Jones symmetry notation
-
-      joneschrs = "123456xyz/,+- "
-      s         = Matrix([[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,1]])
-      axis      = 0
-      sign      = 1
-      inum      = 0
-
-      do i=0,Len(j)-1    {
-          c = j[i]
-          If (c not in joneschrs) dummy = print('illegal char in symmetry xyz')
-
-          If      (c == ' ') Next
-          If      (c == ',') {
-                             axis     += 1
-                             inum      = 0
-                             sign      = 1
-          }
-          Else If (c == '+') sign      = +1
-          Else If (c == '-') sign      = -1
-          Else If (c == 'x') s[axis,0] = sign
-          Else If (c == 'y') s[axis,1] = sign
-          Else If (c == 'z') s[axis,2] = sign
-          Else   {
-               If (inum == 0)   m  = AtoI(c)
-               If (inum == 1 and c != '/') dummy = print('illegal num in
-    symmetry xyz')            If (inum == 2)   {
-                                n  = AtoI(c)
-                     If(n == 5) dummy = print('illegal translation in symmetry
-    xyz')                  s[axis,3] = Mod(10.+ Float(sign*m)/Float(n), 1.)
-                     sign      = 1
-               }
-               inum += 1
-       }  }
-                          SeitzFromJones = s
-    }
-;
-
-save_
-
-save_function.symequiv
-
-    _definition.id                '_function.SymEquiv'
-    _definition.update            2021-03-01
-    _description.text
-;
-    The function
-                    xyz' =  SymEquiv( symop, xyz )
-
-    returns a fractional coordinate vector xyz' which is input vector
-    xyz transformed by the input symop 'n_pqr' applied to the symmetry
-    equivalent matrix extracted from the category space_group_symop.
-;
-    _name.category_id             function
-    _name.object_id               SymEquiv
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Real
-    _units.code                   none
-    _method.expression
-;
-    Function SymEquiv( c :[Single, Symop],    # symop string n_pqr
-                       x :[Matrix, Real]   ){  # fract coordinate vector
-
-            s = space_group_symop [ SymKey( c ) ]
-            SymEquiv = s.R * x + s.T + SymLat( c )
-    }
-;
-
-save_
-
-save_function.symkey
-
-    _definition.id                '_function.SymKey'
-    _definition.update            2021-03-01
-    _description.text
-;
-    The function
-                  m  =  SymKey( s )
-
-    returns an integer index to the Seitz matrices from the character
-    string of the form 'n_pqr'.
-;
-    _name.category_id             function
-    _name.object_id               SymKey
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Integer
-    _enumeration.range            1:192
-    _units.code                   none
-    _method.expression
-;
-    Function SymKey( s :[Single, Symop])  {  # symop string
-
-           If (s == '.')   n = 1
-           Else            n = AtoI(s[0])
-
-                SymKey =  n       # index from 1
-    }
-;
-
-save_
-
-save_function.symlat
-
-    _definition.id                '_function.SymLat'
-    _definition.update            2021-03-01
-    _description.text
-;
-    The function
-                  v  =  SymLat( s )
-
-    returns a vector of the cell translations applied to the coordinates
-    from the character string of the form 'n_pqr'. i.e. p-5, q-5, r-5.
-;
-    _name.category_id             function
-    _name.object_id               SymLat
-    _type.purpose                 Number
-    _type.source                  Derived
-    _type.container               Matrix
-    _type.dimension               '[3]'
-    _type.contents                Integer
-    _units.code                   none
-    _method.expression
-;
-    Function SymLat( s :[Single, Symop])  {  # symop string
-
-           If (s[0] == ' ')  v = [ 5, 5, 5 ]
-           Else              v = [ AtoI(s[2]), AtoI(s[3]), AtoI(s[4]) ]
-
-                 SymLat  =  v - 5
-    }
-;
-
-save_
-
-save_function.symop
-
-    _definition.id                '_function.Symop'
-    _definition.update            2006-06-30
-    _description.text
-;
-    The function
-                  s  =  Symop( n, t )
-
-    returns a character string of the form 'n_pqr' where n is the
-    symmetry equivalent site number and [p,q,r] is the cell translation
-    vector PLUS [5,5,5].
-;
-    _name.category_id             function
-    _name.object_id               Symop
-    _type.purpose                 Composite
-    _type.source                  Derived
-    _type.container               Single
-    _type.contents                Symop
-    _method.expression
-;
-    Function Symop( n  :[Single, Integer],   # symmetry equivalent site number
-                    t  :[List  , Integer]) { # cell translation vector
-
-           d  =  t + 5
-        Symop =  repr(n) + '_' + repr(d[0]) + repr(d[1]) + repr(d[2])
-    }
+         Site symmetry for the Wyckoff position 96f in space group No.
+          228, F d -3 c.  The site-symmetry group is isomorphic to the
+          point group 2 with the twofold axis along one of the {100}
+          directions.
 ;
 
 save_
@@ -11312,9 +10955,7 @@ save_geom_angle.atom_site_label_1
     _name.category_id             geom_angle
     _name.object_id               atom_site_label_1
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -11354,9 +10995,7 @@ save_geom_angle.atom_site_label_3
     _name.category_id             geom_angle
     _name.object_id               atom_site_label_3
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -11583,9 +11222,7 @@ save_geom_bond.atom_site_label_1
     _name.category_id             geom_bond
     _name.object_id               atom_site_label_1
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -11601,9 +11238,7 @@ save_geom_bond.atom_site_label_2
     _name.category_id             geom_bond
     _name.object_id               atom_site_label_2
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -11858,9 +11493,7 @@ save_geom_contact.atom_site_label_1
     _name.category_id             geom_contact
     _name.object_id               atom_site_label_1
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -11876,9 +11509,7 @@ save_geom_contact.atom_site_label_2
     _name.category_id             geom_contact
     _name.object_id               atom_site_label_2
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -12123,9 +11754,7 @@ save_geom_hbond.atom_site_label_a
     _name.category_id             geom_hbond
     _name.object_id               atom_site_label_A
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -12141,9 +11770,7 @@ save_geom_hbond.atom_site_label_d
     _name.category_id             geom_hbond
     _name.object_id               atom_site_label_D
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -12159,9 +11786,7 @@ save_geom_hbond.atom_site_label_h
     _name.category_id             geom_hbond
     _name.object_id               atom_site_label_H
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -12588,9 +12213,7 @@ save_geom_torsion.atom_site_label_1
     _name.category_id             geom_torsion
     _name.object_id               atom_site_label_1
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -12606,9 +12229,7 @@ save_geom_torsion.atom_site_label_2
     _name.category_id             geom_torsion
     _name.object_id               atom_site_label_2
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -12624,9 +12245,7 @@ save_geom_torsion.atom_site_label_3
     _name.category_id             geom_torsion
     _name.object_id               atom_site_label_3
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -12642,9 +12261,7 @@ save_geom_torsion.atom_site_label_4
     _name.category_id             geom_torsion
     _name.object_id               atom_site_label_4
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':atom_site_id}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':atom_site_id}]
 
 save_
 
@@ -12951,8 +12568,10 @@ save_model_site.display_colour
     _type.contents                Code
     _enumeration.def_index_id     '_model_site.type_symbol'
 
-    _import.get                   [{'file':templ_enum.cif  'save':colour_RGB}
-                                   {'file':templ_enum.cif  'save':colour_hue}]
+    _import.get                   [
+                                   {'file':templ_enum.cif  'save':colour_RGB}
+                                   {'file':templ_enum.cif  'save':colour_hue}
+                                  ]
 
 save_
 
@@ -13575,24 +13194,25 @@ save_audit.schema
       _enumeration_set.detail
          'Base'
 ;
-       Original Core CIF schema
+         Original Core CIF schema
 ;
          'Space group tables'
 ;
-       space_group category is looped
+         space_group category is looped
 ;
          'Entry'
 ;
-       entry category is defined and looped: information from multiple
-       datablocks in one block
+         entry category is defined and looped: information from multiple
+         datablocks in one block
 ;
          'Custom'
 ;
-       Examine dictionaries provided in _audit_conform
+         Examine dictionaries provided in _audit_conform
 ;
          'Local'
 ;
-       Locally modified dictionaries. These datafiles should not be distributed
+         Locally modified dictionaries. These datafiles should not be
+         distributed
 ;
 
     _enumeration.default          Base
@@ -13654,10 +13274,10 @@ save_audit_author.address
     _description_example.case
 ;
     Department
-                            Institute
-                            Street
-                            City and postcode
-                            COUNTRY
+                                Institute
+                                Street
+                                City and postcode
+                                COUNTRY
 ;
 
 save_
@@ -13795,41 +13415,41 @@ save_audit_author_role.role
       _enumeration_set.detail
          design
 ;
-       conceived and/or designed the experiment
+         conceived and/or designed the experiment
 ;
          synthesis
 ;
-       synthesised the samples
+         synthesised the samples
 ;
          preparation
 ;
-       prepared the samples for measurement, e.g. crystallised or
-       recrystallised the sample
+         prepared the samples for measurement, e.g. crystallised or
+         recrystallised the sample
 ;
          characterisation
 ;
-       performed non-crystallographic measurements on the samples
+         performed non-crystallographic measurements on the samples
 ;
          measurement
 ;
-       collected and/or reduced diffraction data
+         collected and/or reduced diffraction data
 ;
          analysis
 ;
-       worked on the structural model
+         worked on the structural model
 ;
          software
 ;
-       developed bespoke software for specialised data processing and/or
-       analysis
+         developed bespoke software for specialised data processing and/or
+         analysis
 ;
          submission
 ;
-       prepared the final CIF file
+         prepared the final CIF file
 ;
          other
 ;
-       none of the listed roles. See _audit_author_role.special_details
+         none of the listed roles. See _audit_author_role.special_details
 ;
 
 save_
@@ -13961,10 +13581,10 @@ save_audit_contact_author.address
     _description_example.case
 ;
     Department
-                            Institute
-                            Street
-                            City and postcode
-                            COUNTRY
+                                Institute
+                                Street
+                                City and postcode
+                                COUNTRY
 ;
 
 save_
@@ -14178,33 +13798,33 @@ save_AUDIT_SUPPORT
     _description_example.case
 ;
     loop_
-     _audit_support.id
-     _audit_support.funding_organization
-     _audit_support.funding_organization_doi
-     _audit_support.award_type
-     _audit_support.award_number
-     _audit_support.award_recipient
+         _audit_support.id
+         _audit_support.funding_organization
+         _audit_support.funding_organization_doi
+         _audit_support.award_type
+         _audit_support.award_number
+         _audit_support.award_recipient
 
-     1 'Engineering and Physical Sciences Research Council'
-     'https://doi.org/10.13039/501100000266'
-     studentship 'EP-M506515-1' 'E. T. Broadhurst'
-     2 'Swedish Funding Council'
-     ?
-     grant '2017-05333' 'M. Lightowler'
-     3 'Wellcome Trust'
-     'https://doi.org/10.13039/100004440'
-     grant 'WT087658' 'University of Edinburgh EM facility'
-     4 'Scottish Universities Life Sciences Alliance (SULSA)'
-     ?
-     other ? 'University of Edinburgh EM facility'
-     5 'Harvard Medical School'
-     'https://doi.org/10.13039/100006691'
-     ? ? ?
+         1 'Engineering and Physical Sciences Research Council'
+         'https://doi.org/10.13039/501100000266'
+         studentship 'EP-M506515-1' 'E. T. Broadhurst'
+         2 'Swedish Funding Council'
+         ?
+         grant '2017-05333' 'M. Lightowler'
+         3 'Wellcome Trust'
+         'https://doi.org/10.13039/100004440'
+         grant 'WT087658' 'University of Edinburgh EM facility'
+         4 'Scottish Universities Life Sciences Alliance (SULSA)'
+         ?
+         other ? 'University of Edinburgh EM facility'
+         5 'Harvard Medical School'
+         'https://doi.org/10.13039/100006691'
+         ? ? ?
 ;
     _description_example.detail
 ;
     Example prepared from funding data published in
-     https://doi.org/10.1107/S2052252519016105
+         https://doi.org/10.1107/S2052252519016105
 ;
 
 save_
@@ -14266,34 +13886,34 @@ save_audit_support.award_type
       _enumeration_set.detail
          gift
 ;
-       Funds were drawn from an unobligated, discretionary source under the
-       control of one of the participants in the research program. This
-       includes prize money and personal funds.
+         Funds were drawn from an unobligated, discretionary source under the
+         control of one of the participants in the research program. This
+         includes prize money and personal funds.
 ;
          grant
 ;
-       Funds were provided by an organization or person outside the research
-       program for the specific purpose of supporting the research, as directed
-       by the primary investigator
+         Funds were provided by an organization or person outside the research
+         program for the specific purpose of supporting the research, as
+         directed by the primary investigator
 ;
          contract
 ;
-       Funds were provided as part of a contractual agreement not covered by
-       other award types.
+         Funds were provided as part of a contractual agreement not covered by
+         other award types.
 ;
          studentship
 ;
-       Funds were provided specifically to support a student in conducting
-       research, whether directly or indirectly. This category includes
-       scholarships and bursaries where the student is expected to engage in
-       research.
+         Funds were provided specifically to support a student in conducting
+         research, whether directly or indirectly. This category includes
+         scholarships and bursaries where the student is expected to engage in
+         research.
 ;
          other
 ;
-       Other type of support, including financial support not explicitly
-       directed towards research. This category includes scholarships and
-       bursaries for students that cover living expenses while pursuing higher
-       education with no requirement to conduct research.
+         Other type of support, including financial support not explicitly
+         directed towards research. This category includes scholarships and
+         bursaries for students that cover living expenses while pursuing
+         higher education with no requirement to conduct research.
 ;
 
 save_
@@ -15781,24 +15401,24 @@ save_database_related.relation
       _enumeration_set.detail
          Identical
 ;
-       The dataset contents are identical
+         The dataset contents are identical
 ;
          Subset
 ;
-       The dataset contents are a proper subset of the contents of the data
-       block
+         The dataset contents are a proper subset of the contents of the data
+         block
 ;
          Superset
 ;
-       The dataset contents include the contents of the data block
+         The dataset contents include the contents of the data block
 ;
          Derived
 ;
-       The dataset contents are derivable from the contents of the data block
+         The dataset contents are derivable from the contents of the data block
 ;
          Common
 ;
-       The dataset contents share a common source
+         The dataset contents share a common source
 ;
 
 save_
@@ -16996,10 +16616,10 @@ save_publ_author.address
     _description_example.case
 ;
     Department
-                            Institute
-                            Street
-                            City and postcode
-                            COUNTRY
+                                Institute
+                                Street
+                                City and postcode
+                                COUNTRY
 ;
 
 save_
@@ -17371,10 +16991,10 @@ save_publ_contact_author.address
     _description_example.case
 ;
     Department of Chemistry and Biochemistry
-                            University of Guelph
-                            Ontario
-                            Canada
-                            N1G 2W1
+                                University of Guelph
+                                Ontario
+                                Canada
+                                N1G 2W1
 ;
 
 save_
@@ -19550,9 +19170,7 @@ save_atom_site_aniso.b_11_su
     _name.object_id               B_11_su
     _name.linked_item_id          '_atom_site_aniso.B_11'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_BIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_BIJ_su}]
 
 save_
 
@@ -19587,9 +19205,7 @@ save_atom_site_aniso.b_12_su
     _name.object_id               B_12_su
     _name.linked_item_id          '_atom_site_aniso.B_12'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_BIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_BIJ_su}]
 
 save_
 
@@ -19624,9 +19240,7 @@ save_atom_site_aniso.b_13_su
     _name.object_id               B_13_su
     _name.linked_item_id          '_atom_site_aniso.B_13'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_BIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_BIJ_su}]
 
 save_
 
@@ -19661,9 +19275,7 @@ save_atom_site_aniso.b_22_su
     _name.object_id               B_22_su
     _name.linked_item_id          '_atom_site_aniso.B_22'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_BIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_BIJ_su}]
 
 save_
 
@@ -19698,9 +19310,7 @@ save_atom_site_aniso.b_23_su
     _name.object_id               B_23_su
     _name.linked_item_id          '_atom_site_aniso.B_23'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_BIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_BIJ_su}]
 
 save_
 
@@ -19735,9 +19345,7 @@ save_atom_site_aniso.b_33_su
     _name.object_id               B_33_su
     _name.linked_item_id          '_atom_site_aniso.B_33'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_BIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_BIJ_su}]
 
 save_
 
@@ -19910,9 +19518,7 @@ save_atom_site_aniso.u_11_su
     _name.object_id               U_11_su
     _name.linked_item_id          '_atom_site_aniso.U_11'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_UIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_UIJ_su}]
 
 save_
 
@@ -19947,9 +19553,7 @@ save_atom_site_aniso.u_12_su
     _name.object_id               U_12_su
     _name.linked_item_id          '_atom_site_aniso.U_12'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_UIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_UIJ_su}]
 
 save_
 
@@ -19984,9 +19588,7 @@ save_atom_site_aniso.u_13_su
     _name.object_id               U_13_su
     _name.linked_item_id          '_atom_site_aniso.U_13'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_UIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_UIJ_su}]
 
 save_
 
@@ -20021,9 +19623,7 @@ save_atom_site_aniso.u_22_su
     _name.object_id               U_22_su
     _name.linked_item_id          '_atom_site_aniso.U_22'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_UIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_UIJ_su}]
 
 save_
 
@@ -20058,9 +19658,7 @@ save_atom_site_aniso.u_23_su
     _name.object_id               U_23_su
     _name.linked_item_id          '_atom_site_aniso.U_23'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_UIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_UIJ_su}]
 
 save_
 
@@ -20095,9 +19693,7 @@ save_atom_site_aniso.u_33_su
     _name.object_id               U_33_su
     _name.linked_item_id          '_atom_site_aniso.U_33'
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':aniso_UIJ_su}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':aniso_UIJ_su}]
 
 save_
 
@@ -20149,52 +19745,52 @@ save_atom_sites.solution_hydrogens
       _enumeration_set.detail
          difmap
 ;
-       difference Fourier map
+         difference Fourier map
 ;
          vecmap
 ;
-       real-space vector search
+         real-space vector search
 ;
          heavy
 ;
-       heavy-atom method
+         heavy-atom method
 ;
          direct
 ;
-       structure-invariant direct methods
+         structure-invariant direct methods
 ;
          geom
 ;
-       inferred from neighbouring sites
+         inferred from neighbouring sites
 ;
          disper
 ;
-       anomalous-dispersion techniques
+         anomalous-dispersion techniques
 ;
          isomor
 ;
-       isomorphous structure methods
+         isomorphous structure methods
 ;
          mixed
 ;
-       a mixture of "geom" and "difmap"
+         a mixture of "geom" and "difmap"
 ;
          notdet
 ;
-       coordinates were not determined
+         coordinates were not determined
 ;
          dual
 ;
-       dual-space method (Sheldrick et al., 2001)
+         dual-space method (Sheldrick et al., 2001)
 ;
          iterative
 ;
-       iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
-       Acta Cryst. A60, 134-141]
+         iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Acta Cryst. A60, 134-141]
 ;
          other
 ;
-       a method not included elsewhere in this list
+         a method not included elsewhere in this list
 ;
 
 save_
@@ -20231,48 +19827,48 @@ save_atom_sites.solution_primary
       _enumeration_set.detail
          difmap
 ;
-       difference Fourier map
+         difference Fourier map
 ;
          vecmap
 ;
-       real-space vector search
+         real-space vector search
 ;
          heavy
 ;
-       heavy-atom method
+         heavy-atom method
 ;
          direct
 ;
-       structure-invariant direct methods
+         structure-invariant direct methods
 ;
          geom
 ;
-       inferred from neighbouring sites
+         inferred from neighbouring sites
 ;
          disper
 ;
-       anomalous-dispersion techniques
+         anomalous-dispersion techniques
 ;
          isomor
 ;
-       isomorphous structure methods
+         isomorphous structure methods
 ;
          notdet
 ;
-       coordinates were not determined
+         coordinates were not determined
 ;
          dual
 ;
-       dual-space method (Sheldrick et al., 2001)
+         dual-space method (Sheldrick et al., 2001)
 ;
          iterative
 ;
-       iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
-       Acta Cryst. A60, 134-141]
+         iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Acta Cryst. A60, 134-141]
 ;
          other
 ;
-       a method not included elsewhere in this list
+         a method not included elsewhere in this list
 ;
 
 save_
@@ -20309,48 +19905,48 @@ save_atom_sites.solution_secondary
       _enumeration_set.detail
          difmap
 ;
-       difference Fourier map
+         difference Fourier map
 ;
          vecmap
 ;
-       real-space vector search
+         real-space vector search
 ;
          heavy
 ;
-       heavy-atom method
+         heavy-atom method
 ;
          direct
 ;
-       structure-invariant direct methods
+         structure-invariant direct methods
 ;
          geom
 ;
-       inferred from neighbouring sites
+         inferred from neighbouring sites
 ;
          disper
 ;
-       anomalous-dispersion techniques
+         anomalous-dispersion techniques
 ;
          isomor
 ;
-       isomorphous structure methods
+         isomorphous structure methods
 ;
          notdet
 ;
-       coordinates were not determined
+         coordinates were not determined
 ;
          dual
 ;
-       dual-space method (Sheldrick et al., 2001)
+         dual-space method (Sheldrick et al., 2001)
 ;
          iterative
 ;
-       iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
-       Acta Cryst. A60, 134-141]
+         iterative e.g. charge flipping [Oszl\'anyi, G. and S\"uto, A. (2004).
+         Acta Cryst. A60, 134-141]
 ;
          other
 ;
-       a method not included elsewhere in this list
+         a method not included elsewhere in this list
 ;
 
 save_
@@ -20428,9 +20024,7 @@ save_atom_sites_cartn_transform.mat_11
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_11
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -20455,9 +20049,7 @@ save_atom_sites_cartn_transform.mat_12
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_12
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -20479,9 +20071,7 @@ save_atom_sites_cartn_transform.mat_13
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_13
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -20503,9 +20093,7 @@ save_atom_sites_cartn_transform.mat_21
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_21
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -20530,9 +20118,7 @@ save_atom_sites_cartn_transform.mat_22
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_22
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -20556,9 +20142,7 @@ save_atom_sites_cartn_transform.mat_23
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_23
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -20580,9 +20164,7 @@ save_atom_sites_cartn_transform.mat_31
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_31
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -20606,9 +20188,7 @@ save_atom_sites_cartn_transform.mat_32
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_32
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -20632,9 +20212,7 @@ save_atom_sites_cartn_transform.mat_33
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               mat_33
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
     _method.purpose               Definition
     _method.expression
@@ -20694,9 +20272,7 @@ save_atom_sites_cartn_transform.vec_1
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               vec_1
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
 save_
 
@@ -20712,9 +20288,7 @@ save_atom_sites_cartn_transform.vec_2
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               vec_2
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
 save_
 
@@ -20730,9 +20304,7 @@ save_atom_sites_cartn_transform.vec_3
     _name.category_id             atom_sites_Cartn_transform
     _name.object_id               vec_3
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':Cartn_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':Cartn_matrix}]
 
 save_
 
@@ -20819,9 +20391,7 @@ save_atom_sites_fract_transform.mat_11
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_11
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -20837,9 +20407,7 @@ save_atom_sites_fract_transform.mat_12
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_12
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -20855,9 +20423,7 @@ save_atom_sites_fract_transform.mat_13
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_13
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -20873,9 +20439,7 @@ save_atom_sites_fract_transform.mat_21
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_21
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -20891,9 +20455,7 @@ save_atom_sites_fract_transform.mat_22
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_22
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -20909,9 +20471,7 @@ save_atom_sites_fract_transform.mat_23
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_23
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -20927,9 +20487,7 @@ save_atom_sites_fract_transform.mat_31
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_31
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -20945,9 +20503,7 @@ save_atom_sites_fract_transform.mat_32
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_32
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -20963,9 +20519,7 @@ save_atom_sites_fract_transform.mat_33
     _name.category_id             atom_sites_fract_transform
     _name.object_id               mat_33
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -21019,9 +20573,7 @@ save_atom_sites_fract_transform.vec_1
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_1
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -21037,9 +20589,7 @@ save_atom_sites_fract_transform.vec_2
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_2
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -21055,9 +20605,7 @@ save_atom_sites_fract_transform.vec_3
     _name.category_id             atom_sites_fract_transform
     _name.object_id               vec_3
 
-    _import.get                   [
-                                   {'file':templ_attr.cif  'save':fract_matrix}
-                                  ]
+    _import.get                   [{'file':templ_attr.cif  'save':fract_matrix}]
 
 save_
 
@@ -21232,8 +20780,10 @@ save_atom_type.display_colour
     _type.contents                Code
     _enumeration.def_index_id     '_atom_type.symbol'
 
-    _import.get                   [{'file':templ_enum.cif  'save':colour_rgb}
-                                   {'file':templ_enum.cif  'save':colour_hue}]
+    _import.get                   [
+                                   {'file':templ_enum.cif  'save':colour_rgb}
+                                   {'file':templ_enum.cif  'save':colour_hue}
+                                  ]
 
 save_
 
@@ -21279,8 +20829,10 @@ save_atom_type.element_symbol
     _enumeration.def_index_id     '_atom_type.symbol'
 
     _import.get
-        [{'file':templ_enum.cif  'save':element_symbol}
-         {'file':templ_enum.cif  'save':ion_to_element}]
+        [
+         {'file':templ_enum.cif  'save':element_symbol}
+         {'file':templ_enum.cif  'save':ion_to_element}
+        ]
 
 save_
 
@@ -21466,8 +21018,10 @@ save_atom_type_scat.cromer_mann_a1
     _name.object_id               Cromer_Mann_a1
 
     _import.get
-        [{'file':templ_attr.cif  'save':Cromer_Mann_coeff}
-         {'file':templ_enum.cif  'save':Cromer_Mann_a1}]
+        [
+         {'file':templ_attr.cif  'save':Cromer_Mann_coeff}
+         {'file':templ_enum.cif  'save':Cromer_Mann_a1}
+        ]
 
 save_
 
@@ -21484,8 +21038,10 @@ save_atom_type_scat.cromer_mann_a2
     _name.object_id               Cromer_Mann_a2
 
     _import.get
-        [{'file':templ_attr.cif  'save':Cromer_Mann_coeff}
-         {'file':templ_enum.cif  'save':Cromer_Mann_a2}]
+        [
+         {'file':templ_attr.cif  'save':Cromer_Mann_coeff}
+         {'file':templ_enum.cif  'save':Cromer_Mann_a2}
+        ]
 
 save_
 
@@ -21502,8 +21058,10 @@ save_atom_type_scat.cromer_mann_a3
     _name.object_id               Cromer_Mann_a3
 
     _import.get
-        [{'file':templ_attr.cif  'save':Cromer_Mann_coeff}
-         {'file':templ_enum.cif  'save':Cromer_Mann_a3}]
+        [
+         {'file':templ_attr.cif  'save':Cromer_Mann_coeff}
+         {'file':templ_enum.cif  'save':Cromer_Mann_a3}
+        ]
 
 save_
 
@@ -21520,8 +21078,10 @@ save_atom_type_scat.cromer_mann_a4
     _name.object_id               Cromer_Mann_a4
 
     _import.get
-        [{'file':templ_attr.cif  'save':Cromer_Mann_coeff}
-         {'file':templ_enum.cif  'save':Cromer_Mann_a4}]
+        [
+         {'file':templ_attr.cif  'save':Cromer_Mann_coeff}
+         {'file':templ_enum.cif  'save':Cromer_Mann_a4}
+        ]
 
 save_
 
@@ -21538,8 +21098,10 @@ save_atom_type_scat.cromer_mann_b1
     _name.object_id               Cromer_Mann_b1
 
     _import.get
-        [{'file':templ_attr.cif  'save':Cromer_Mann_coeff}
-         {'file':templ_enum.cif  'save':Cromer_Mann_b1}]
+        [
+         {'file':templ_attr.cif  'save':Cromer_Mann_coeff}
+         {'file':templ_enum.cif  'save':Cromer_Mann_b1}
+        ]
 
 save_
 
@@ -21556,8 +21118,10 @@ save_atom_type_scat.cromer_mann_b2
     _name.object_id               Cromer_Mann_b2
 
     _import.get
-        [{'file':templ_attr.cif  'save':Cromer_Mann_coeff}
-         {'file':templ_enum.cif  'save':Cromer_Mann_b2}]
+        [
+         {'file':templ_attr.cif  'save':Cromer_Mann_coeff}
+         {'file':templ_enum.cif  'save':Cromer_Mann_b2}
+        ]
 
 save_
 
@@ -21574,8 +21138,10 @@ save_atom_type_scat.cromer_mann_b3
     _name.object_id               Cromer_Mann_b3
 
     _import.get
-        [{'file':templ_attr.cif  'save':Cromer_Mann_coeff}
-         {'file':templ_enum.cif  'save':Cromer_Mann_b3}]
+        [
+         {'file':templ_attr.cif  'save':Cromer_Mann_coeff}
+         {'file':templ_enum.cif  'save':Cromer_Mann_b3}
+        ]
 
 save_
 
@@ -21592,8 +21158,10 @@ save_atom_type_scat.cromer_mann_b4
     _name.object_id               Cromer_Mann_b4
 
     _import.get
-        [{'file':templ_attr.cif  'save':Cromer_Mann_coeff}
-         {'file':templ_enum.cif  'save':Cromer_Mann_b4}]
+        [
+         {'file':templ_attr.cif  'save':Cromer_Mann_coeff}
+         {'file':templ_enum.cif  'save':Cromer_Mann_b4}
+        ]
 
 save_
 
@@ -21610,8 +21178,10 @@ save_atom_type_scat.cromer_mann_c
     _name.object_id               Cromer_Mann_c
 
     _import.get
-        [{'file':templ_attr.cif  'save':Cromer_Mann_coeff}
-         {'file':templ_enum.cif  'save':Cromer_Mann_c}]
+        [
+         {'file':templ_attr.cif  'save':Cromer_Mann_coeff}
+         {'file':templ_enum.cif  'save':Cromer_Mann_c}
+        ]
 
 save_
 
@@ -21868,8 +21438,10 @@ save_atom_type_scat.hi_ang_fox_c0
     _name.object_id               hi_ang_Fox_c0
 
     _import.get
-        [{'file':templ_attr.cif  'save':hi_ang_Fox_coeffs}
-         {'file':templ_enum.cif  'save':hi_ang_Fox_c0}]
+        [
+         {'file':templ_attr.cif  'save':hi_ang_Fox_coeffs}
+         {'file':templ_enum.cif  'save':hi_ang_Fox_c0}
+        ]
 
 save_
 
@@ -21880,8 +21452,10 @@ save_atom_type_scat.hi_ang_fox_c1
     _name.object_id               hi_ang_Fox_c1
 
     _import.get
-        [{'file':templ_attr.cif  'save':hi_ang_Fox_coeffs}
-         {'file':templ_enum.cif  'save':hi_ang_Fox_c1}]
+        [
+         {'file':templ_attr.cif  'save':hi_ang_Fox_coeffs}
+         {'file':templ_enum.cif  'save':hi_ang_Fox_c1}
+        ]
 
 save_
 
@@ -21892,8 +21466,10 @@ save_atom_type_scat.hi_ang_fox_c2
     _name.object_id               hi_ang_Fox_c2
 
     _import.get
-        [{'file':templ_attr.cif  'save':hi_ang_Fox_coeffs}
-         {'file':templ_enum.cif  'save':hi_ang_Fox_c2}]
+        [
+         {'file':templ_attr.cif  'save':hi_ang_Fox_coeffs}
+         {'file':templ_enum.cif  'save':hi_ang_Fox_c2}
+        ]
 
 save_
 
@@ -21904,8 +21480,10 @@ save_atom_type_scat.hi_ang_fox_c3
     _name.object_id               hi_ang_Fox_c3
 
     _import.get
-        [{'file':templ_attr.cif  'save':hi_ang_Fox_coeffs}
-         {'file':templ_enum.cif  'save':hi_ang_Fox_c3}]
+        [
+         {'file':templ_attr.cif  'save':hi_ang_Fox_coeffs}
+         {'file':templ_enum.cif  'save':hi_ang_Fox_c3}
+        ]
 
 save_
 
@@ -22583,7 +22161,7 @@ save_refine_ls.extinction_expression
     _description_example.detail
 ;
     Larson, A. C. (1970). "Crystallographic Computing", edited by
-                  F. R. Ahmed. Eq. (22) p. 292.  Copenhagen: Munksgaard.
+                      F. R. Ahmed. Eq. (22) p. 292.  Copenhagen: Munksgaard.
 ;
 
 save_
@@ -22923,71 +22501,71 @@ save_refine_ls.hydrogen_treatment
       _enumeration_set.detail
          refall
 ;
-       refined all H-atom parameters
+         refined all H-atom parameters
 ;
          refxyz
 ;
-       refined H-atom coordinates only
+         refined H-atom coordinates only
 ;
          refU
 ;
-       refined H-atom Us only
+         refined H-atom Us only
 ;
          noref
 ;
-       no refinement of H-atom parameters
+         no refinement of H-atom parameters
 ;
          constr
 ;
-       H-atom parameters constrained
+         H-atom parameters constrained
 ;
          hetero
 ;
-       H-atom parameters constrained for H on C, all H-atom parameters refined
-       for H on heteroatoms
+         H-atom parameters constrained for H on C, all H-atom parameters
+         refined for H on heteroatoms
 ;
          heteroxyz
 ;
-       H-atom parameters constrained for H on C, refined H-atom coordinates
-       only for H on heteroatoms
+         H-atom parameters constrained for H on C, refined H-atom coordinates
+         only for H on heteroatoms
 ;
          heteroU
 ;
-       H-atom parameters constrained for H on C, refined H-atom U's only for H
-       on heteroatoms
+         H-atom parameters constrained for H on C, refined H-atom U's only for
+         H on heteroatoms
 ;
          heteronoref
 ;
-       H-atom parameters constrained for H on C, no refinement of H-atom
-       parameters for H on heteroatoms
+         H-atom parameters constrained for H on C, no refinement of H-atom
+         parameters for H on heteroatoms
 ;
          hetero-mixed
 ;
-       H-atom parameters constrained for H on C and some heteroatoms, all
-       H-atom parameters refined for H on remaining heteroatoms
+         H-atom parameters constrained for H on C and some heteroatoms, all
+         H-atom parameters refined for H on remaining heteroatoms
 ;
          heteroxyz-mixed
 ;
-       H-atom parameters constrained for H on C and some heteroatoms, refined
-       H-atom coordinates only for H on remaining heteroatoms
+         H-atom parameters constrained for H on C and some heteroatoms, refined
+         H-atom coordinates only for H on remaining heteroatoms
 ;
          heteroU-mixed
 ;
-       H-atom parameters constrained for H on C and some heteroatoms, refined
-       H-atom U's only for H on remaining heteroatoms
+         H-atom parameters constrained for H on C and some heteroatoms, refined
+         H-atom U's only for H on remaining heteroatoms
 ;
          heteronoref-mixed
 ;
-       H-atom parameters constrained for H on C and some heteroatoms, no
-       refinement of H-atom parameters for H on remaining heteroatoms
+         H-atom parameters constrained for H on C and some heteroatoms, no
+         refinement of H-atom parameters for H on remaining heteroatoms
 ;
          mixed
 ;
-       some constrained, some independent
+         some constrained, some independent
 ;
          undef
 ;
-       H-atom parameters not defined
+         H-atom parameters not defined
 ;
 
 save_
@@ -23603,9 +23181,9 @@ save_refine_ls.weighting_details
     _description_example.case
 ;
     Sigdel model of Konnert-Hendrickson:
-             Sigdel = Afsig +  Bfsig*(sin(\q)/\l - 1/6)
-             Afsig  = 22.0, Bfsig = 150.0 at the beginning of refinement.
-             Afsig  = 16.0, Bfsig =  60.0 at the end of refinement.
+                 Sigdel = Afsig +  Bfsig*(sin(\q)/\l - 1/6)
+                 Afsig  = 22.0, Bfsig = 150.0 at the beginning of refinement.
+                 Afsig  = 16.0, Bfsig =  60.0 at the end of refinement.
 ;
 
 save_
@@ -23941,6 +23519,281 @@ save_refine_ls_class.wr_factor_all
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   none
+
+save_
+
+save_FUNCTION
+
+    _definition.id                FUNCTION
+    _definition.scope             Category
+    _definition.class             Functions
+    _definition.update            2012-12-18
+    _description.text
+;
+    The crystallographic functions the invoked in the definition
+    methods of CORE STRUCTURE data items defined and used with in
+    the Crystallographic Information Framework (CIF).
+;
+    _name.category_id             CIF_CORE
+    _name.object_id               FUNCTION
+
+save_
+
+save_function.atomtype
+
+    _definition.id                '_function.AtomType'
+    _definition.update            2013-04-17
+    _description.text
+;
+    The function
+                  r  =  AtomType( s )
+
+    returns an atom type symbol (element name) from the atom site label.
+;
+    _name.category_id             function
+    _name.object_id               AtomType
+    _type.purpose                 Encode
+    _type.source                  Assigned
+    _type.container               Single
+    _type.contents                Code
+    _method.expression
+;
+    Function AtomType( s :[Single, Code])  {  # atom label
+
+       m = Len(s)
+       n = 1
+       If (m > 1 and s[1] not in '0123456789') n = 2
+       If (m > 2 and s[2]     in '+-'        ) n = 3
+       If (m > 3 and s[3]     in '+-'        ) n = 4
+
+                AtomType =  s[0:n]
+    }
+;
+
+save_
+
+save_function.closest
+
+    _definition.id                '_function.Closest'
+    _definition.update            2021-03-03
+    _description.text
+;
+    The function
+                  d  =  Closest( v, w )
+
+    returns the cell translation vector required to obtain the
+    closest cell-translated occurrence of the vector V to the vector
+    W.
+;
+    _name.category_id             function
+    _name.object_id               Closest
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   none
+    _method.expression
+;
+    Function Closest( v :[Matrix, Real],   # coord vector to be cell translated
+                      w :[Matrix, Real]) { # target vector
+
+           d  =  v - w
+           Closest  =  Int( Mod( 99.5 + d, 1.0 ) - d )
+    }
+;
+
+save_
+
+save_function.seitzfromjones
+
+    _definition.id                '_function.SeitzFromJones'
+    _definition.update            2021-03-01
+    _description.text
+;
+    The function
+                  s  =  SeitzFromJones( j )
+
+    returns a 4x4 Seitz matrix from the Jones faithful representation of
+    the equivalent position which is a character string e.g. 1/2+x,-x,z.
+;
+    _name.category_id             function
+    _name.object_id               SeitzFromJones
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[4,4]'
+    _type.contents                Real
+    _units.code                   none
+    _method.expression
+;
+     Function SeitzFromJones( j :[Single, Text])  { # Jones symmetry notation
+
+      joneschrs = "123456xyz/,+- "
+      s         = Matrix([[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,1]])
+      axis      = 0
+      sign      = 1
+      inum      = 0
+
+      do i=0,Len(j)-1    {
+          c = j[i]
+          If (c not in joneschrs) dummy = print('illegal char in symmetry xyz')
+
+          If      (c == ' ') Next
+          If      (c == ',') {
+                             axis     += 1
+                             inum      = 0
+                             sign      = 1
+          }
+          Else If (c == '+') sign      = +1
+          Else If (c == '-') sign      = -1
+          Else If (c == 'x') s[axis,0] = sign
+          Else If (c == 'y') s[axis,1] = sign
+          Else If (c == 'z') s[axis,2] = sign
+          Else   {
+               If (inum == 0)   m  = AtoI(c)
+               If (inum == 1 and c != '/') dummy = print('illegal num in
+    symmetry xyz')            If (inum == 2)   {
+                                n  = AtoI(c)
+                     If(n == 5) dummy = print('illegal translation in symmetry
+    xyz')                  s[axis,3] = Mod(10.+ Float(sign*m)/Float(n), 1.)
+                     sign      = 1
+               }
+               inum += 1
+       }  }
+                          SeitzFromJones = s
+    }
+;
+
+save_
+
+save_function.symequiv
+
+    _definition.id                '_function.SymEquiv'
+    _definition.update            2021-03-01
+    _description.text
+;
+    The function
+                    xyz' =  SymEquiv( symop, xyz )
+
+    returns a fractional coordinate vector xyz' which is input vector
+    xyz transformed by the input symop 'n_pqr' applied to the symmetry
+    equivalent matrix extracted from the category space_group_symop.
+;
+    _name.category_id             function
+    _name.object_id               SymEquiv
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Real
+    _units.code                   none
+    _method.expression
+;
+    Function SymEquiv( c :[Single, Symop],    # symop string n_pqr
+                       x :[Matrix, Real]   ){  # fract coordinate vector
+
+            s = space_group_symop [ SymKey( c ) ]
+            SymEquiv = s.R * x + s.T + SymLat( c )
+    }
+;
+
+save_
+
+save_function.symkey
+
+    _definition.id                '_function.SymKey'
+    _definition.update            2021-03-01
+    _description.text
+;
+    The function
+                  m  =  SymKey( s )
+
+    returns an integer index to the Seitz matrices from the character
+    string of the form 'n_pqr'.
+;
+    _name.category_id             function
+    _name.object_id               SymKey
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Integer
+    _enumeration.range            1:192
+    _units.code                   none
+    _method.expression
+;
+    Function SymKey( s :[Single, Symop])  {  # symop string
+
+           If (s == '.')   n = 1
+           Else            n = AtoI(s[0])
+
+                SymKey =  n       # index from 1
+    }
+;
+
+save_
+
+save_function.symlat
+
+    _definition.id                '_function.SymLat'
+    _definition.update            2021-03-01
+    _description.text
+;
+    The function
+                  v  =  SymLat( s )
+
+    returns a vector of the cell translations applied to the coordinates
+    from the character string of the form 'n_pqr'. i.e. p-5, q-5, r-5.
+;
+    _name.category_id             function
+    _name.object_id               SymLat
+    _type.purpose                 Number
+    _type.source                  Derived
+    _type.container               Matrix
+    _type.dimension               '[3]'
+    _type.contents                Integer
+    _units.code                   none
+    _method.expression
+;
+    Function SymLat( s :[Single, Symop])  {  # symop string
+
+           If (s[0] == ' ')  v = [ 5, 5, 5 ]
+           Else              v = [ AtoI(s[2]), AtoI(s[3]), AtoI(s[4]) ]
+
+                 SymLat  =  v - 5
+    }
+;
+
+save_
+
+save_function.symop
+
+    _definition.id                '_function.Symop'
+    _definition.update            2006-06-30
+    _description.text
+;
+    The function
+                  s  =  Symop( n, t )
+
+    returns a character string of the form 'n_pqr' where n is the
+    symmetry equivalent site number and [p,q,r] is the cell translation
+    vector PLUS [5,5,5].
+;
+    _name.category_id             function
+    _name.object_id               Symop
+    _type.purpose                 Composite
+    _type.source                  Derived
+    _type.container               Single
+    _type.contents                Symop
+    _method.expression
+;
+    Function Symop( n  :[Single, Integer],   # symmetry equivalent site number
+                    t  :[List  , Integer]) { # cell translation vector
+
+           d  =  t + 5
+        Symop =  repr(n) + '_' + repr(d[0]) + repr(d[1]) + repr(d[2])
+    }
+;
 
 save_
 
