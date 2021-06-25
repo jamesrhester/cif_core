@@ -742,16 +742,16 @@ save_units_code
          _enumeration_set.state
          _enumeration_set.detail
 
-   'none' "dimensionless - e.g. a ratio, factor, weight or scale"
+   'None' "dimensionless - e.g. a ratio, factor, weight or scale"
 
-   'coulomb'        "electronic charge in coulombs"
+   'Coulomb'        "electronic charge in coulombs"
    'electron_volts' "electronic charge in electron volts eV"
 
    'metres'       "length    'metres (metres * 10^(0))'"
    'centimetres'  "length    'centimetres (metres * 10^( -2))'"
    'millimetres'  "length    'millimetres (metres * 10^( -3))'"
    'nanometres'   "length    'nanometres  (metres * 10^( -9))'"
-   'angstroms'    "length    'angstroms   (metres * 10^(-10))'"
+   'Angstroms'    "length    'angstroms   (metres * 10^(-10))'"
    'picometres'   "length    'picometres  (metres * 10^(-12))'"
    'femtometres'  "length    'femtometres (metres * 10^(-15))'"
 
@@ -770,9 +770,9 @@ save_units_code
 
    'nanometre_squared'     
    "length_squared 'nanometres squared (metres * 10^( -9))^2'"
-   'angstrom_squared'      
+   'Angstrom_squared'      
    "length_squared 'angstroms squared  (metres * 10^(-10))^2'"
-   '8pi_angstroms_squared' 
+   '8pi_Angstroms_squared' 
    "length_squared '8pi^2 * angstroms squared (metres * 10^(-10))^2'"
    'picometre_squared'    
    "length_squared 'picometres squared (metres * 10^(-12))^2'"
@@ -781,7 +781,7 @@ save_units_code
 
    'nanometre_cubed'       
    "length_cubed 'nanometres cubed (metres * 10^( -9))^3'"
-   'angstrom_cubed'        
+   'Angstrom_cubed'        
    "length_cubed 'angstroms cubed  (metres * 10^(-10))^3'"
    'picometre_cubed'       
    "length_cubed 'picometres cubed (metres * 10^(-12))^3'"
@@ -789,7 +789,7 @@ save_units_code
    'grams_per_centimetre_cubed' "density 'grams per cubic centimetre'" 
    'kilograms_per_metre_cubed' "density 'kilograms per cubic metre'" 
    'megagrams_per_metre_cubed' "density 'megagrams per cubic metre'" 
-   'angstrom_cubed_per_dalton' "density 'angstrom cubed per dalton'"
+   'Angstrom_cubed_per_Dalton' "density 'angstrom cubed per dalton'"
 
    'kilopascals'      "pressure      'kilopascals'"
    'gigapascals'      "pressure      'gigapascals'"
@@ -806,9 +806,9 @@ save_units_code
 
    'degree_per_minute' "rotation_per_time  'degrees (of arc) per minute'"
 
-   'celsius'      "temperature     'degrees (of temperature) Celsius'"
-   'kelvins'      "temperature     'temperature in kelvins'"
-   'kelvins_per_minute' "cooling rate 'kelvins per minute'"
+   'Celsius'      "temperature     'degrees (of temperature) Celsius'"
+   'Kelvins'      "temperature     'temperature in kelvins'"
+   'Kelvins_per_minute' "cooling rate 'kelvins per minute'"
 
    'electrons'    "electrons              'electrons'"
 
@@ -821,7 +821,7 @@ save_units_code
    'electrons_per_picometre_cubed'     
    "electron-density 'electrons per picometres cubed (metres * 10^(-12))^3'"
 
-   'dalton'      "standard atomic mass unit"
+   'Dalton'      "standard atomic mass unit"
  
    'pixels_per_millimetre'  "area resolution unit"
    'pixels_per_element'     "area resolution unit"
@@ -830,10 +830,10 @@ save_units_code
    'milliamperes'  "current     'milliamperes'"
    'kilovolts'     "emf         'kilovolts'"
 
-   'volt_squared'     "emf         'volts squared'"
+   'Volt_squared'     "emf         'volts squared'"
    'Bohr_magnetons'   "magnetic moment"
 
-   'arbitrary'    "arbitrary    'arbitrary system of units'"
+   'Arbitrary'    "arbitrary    'arbitrary system of units'"
 
     'counts_per_photon' "measure of gain used in array detectors"
 
