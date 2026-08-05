@@ -11,7 +11,7 @@ data_CIF_CORE
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
     _dictionary.version           3.4.0
-    _dictionary.date              2026-07-19
+    _dictionary.date              2026-07-20
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -314,25 +314,6 @@ save_diffrn.ambient_temperature_lt
     _type.contents                Real
     _enumeration.range            0.0:
     _units.code                   kelvins
-
-save_
-
-save_diffrn.crystal_id
-
-    _definition.id                '_diffrn.crystal_id'
-    _definition.update            2022-05-09
-    _description.text
-;
-    Identifier for the crystal from which diffraction data were
-    collected. This is a pointer to _exptl_crystal.id.
-;
-    _name.category_id             diffrn
-    _name.object_id               crystal_id
-    _name.linked_item_id          '_exptl_crystal.id'
-    _type.purpose                 Link
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -4883,7 +4864,7 @@ save_diffrn_refln.wavelength_id
     _definition.update            2021-10-27
     _description.text
 ;
-    Code identifying the wavelength in the diffrn_radiation_wavelength list.
+    Code identifying the wavelength in the DIFFRN_RADIATION_WAVELENGTH list.
 ;
     _name.category_id             diffrn_refln
     _name.object_id               wavelength_id
@@ -9938,7 +9919,7 @@ save_CHEMICAL_CONN_ATOM
     the molecular species. They allow a 2D chemical diagram to be
     reconstructed for use in a publication or in a database search
     for structural and substructural relationships. In particular,
-    the chemical_conn_atom data items provide information about the
+    the CHEMICAL_CONN_ATOM data items provide information about the
     chemical properties of the atoms in the structure. In cases
     where crystallographic and molecular symmetry elements coincide
     they must also contain symmetry-generated atoms, so as to describe
@@ -10042,9 +10023,9 @@ save_chemical_conn_atom.nh
 ;
     Total number of hydrogen atoms attached to this atom,
     regardless of whether they are included in the refinement or
-    the atom_site list. This number will be the same as
+    the ATOM_SITE list. This number will be the same as
     _atom_site.attached_hydrogens only if none of the hydrogen
-    atoms appear in the atom_site list.
+    atoms appear in the ATOM_SITE list.
 ;
     _name.category_id             chemical_conn_atom
     _name.object_id               NH
@@ -10105,7 +10086,7 @@ save_CHEMICAL_CONN_BOND
     _description.text
 ;
     The category of data items which specify the connections between
-    the atoms sites in the chemical_conn_atom list and the nature
+    the atoms sites in the CHEMICAL_CONN_ATOM list and the nature
     of the chemical bond between these atoms. These are details about
     the two-dimensional (2D) chemical structure of the molecular species.
     They allow a 2D chemical diagram to be reconstructed for use in a
@@ -10334,10 +10315,10 @@ save_chemical_formula.iupac
 ;
     Formula expressed in conformance with IUPAC rules for inorganic
     and metal-organic compounds where these conflict with the rules
-    for any other chemical_formula entries. Typically used for
+    for any other CHEMICAL_FORMULA entries. Typically used for
     formatting a formula in accordance with journal rules. This
     should appear in the data block in addition to the most
-    appropriate of the other chemical_formula data names.
+    appropriate of the other CHEMICAL_FORMULA data names.
     Ref: IUPAC (1990). Nomenclature of Inorganic Chemistry.
          Oxford: Blackwell Scientific Publications.
 ;
@@ -10759,7 +10740,6 @@ save_EXPTL_CRYSTAL
 ;
     _name.category_id             EXPTL
     _name.object_id               EXPTL_CRYSTAL
-    _category_key.name            '_exptl_crystal.id'
 
 save_
 
@@ -11110,24 +11090,6 @@ save_exptl_crystal.f_000
     Else If (_diffrn_radiation.probe == "electron") _units.code =  "volts"
     Else                                            _units.code =  "electrons"
 ;
-
-save_
-
-save_exptl_crystal.id
-
-    _definition.id                '_exptl_crystal.id'
-    _alias.definition_id          '_exptl_crystal_id'
-    _definition.update            2022-05-09
-    _description.text
-;
-    Code identifying a crystal.
-;
-    _name.category_id             exptl_crystal
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -25559,10 +25521,10 @@ save_
 save_atom_type.element_symbol
 
     _definition.id                '_atom_type.element_symbol'
-    _definition.update            2026-04-20
+    _definition.update            2026-07-20
     _description.text
 ;
-    Element symbol for of this atom type. The default value is extracted
+    Element symbol of this atom type. The default value is extracted
     from the ion-to-element enumeration_default list using the index
     value of _atom_type.symbol.
 ;
@@ -26597,7 +26559,7 @@ save_atom_type_scat.inv_mott_bethe_as
     [ a_1, a_2, ... , a_N ].
 
     f(s; Z~0~) =
-    Z~0~ - 8π * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+    Z~0~ - 8π^2^ * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
 
     where s = sin(θ)/λ, r~B~ is the Bohr radius, and Z~0~ is the number of
     electrons for the atom or ion. θ is the diffraction angle and λ is the
@@ -26654,7 +26616,7 @@ save_atom_type_scat.inv_mott_bethe_bs
     [ b_1, b_2, ... , b_N ].
 
     f(s; Z~0~) =
-    Z~0~ - 8π * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+    Z~0~ - 8π^2^ * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
 
     where s = sin(θ)/λ, r~B~ is the Bohr radius, and Z~0~ is the number of
     electrons for the atom or ion. θ is the diffraction angle and λ is the
@@ -26711,7 +26673,7 @@ save_atom_type_scat.inv_mott_bethe_c
     c.
 
     f(s; Z~0~) =
-    Z~0~ - 8π * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
+    Z~0~ - 8π^2^ * r~B~ * s^2^ * {c + Sum[ a~i~ * exp(-b~i~ * s^2^), i=1:N]}
 
     where s = sin(θ)/λ, r~B~ is the Bohr radius, and Z~0~ is the number of
     electrons for the atom or ion. θ is the diffraction angle and λ is the
@@ -29506,12 +29468,12 @@ save_
        _citation_id added to key list of citation_author (James Hester).
        _diffrn.crystal_id removed as diffrn is Set category. Changed
        EXPTL_CRYSTAL to Set type in keeping with current use patterns.
-       Removed all child keys of exptl_crystal_id.
+       Removed all child keys of _exptl_crystal_id.
 ;
          3.0.7                    2017-06-10
 ;
-       Added and deprecated symmetry.cell_setting. Removed rhombohedral
-       option from dREL method for space_group.crystal_system. (James Hester)
+       Added and deprecated _symmetry.cell_setting. Removed rhombohedral
+       option from dREL method for _space_group.crystal_system. (James Hester)
 ;
          3.0.8                    2017-09-23
 ;
@@ -29531,9 +29493,9 @@ save_
          3.0.11                   2019-09-25
 ;
        Removed the _chemical_conn_bond.distance_su data item.
-       Changed the purpose of the diffrn_radiation_wavelength.value data item
+       Changed the purpose of the _diffrn_radiation_wavelength.value data item
        from 'Number' to 'Measurand'. Added the
-       diffrn_radiation_wavelength.value_su data item.
+       _diffrn_radiation_wavelength.value_su data item.
 
        Replaced all instances of the _definition.replaced_by data item with
        data items from the DEFINITION_REPLACED category.
@@ -29548,7 +29510,7 @@ save_
        _valence_param_atom_2, _valence_param_ref_id, _atom_site_aniso.label
        and _atom_type_scat.symbol data items. Removed the _name.linked_item_id
        data item from the definitions of the _diffrn_scale_group.code and
-       diffrn_standard_refln.code data items.
+       _diffrn_standard_refln.code data items.
 
        Updated the definitions of the _geom_hbond.angle_DHA and
        _geom_hbond.angle_DHA_su data items.
@@ -29707,7 +29669,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-07-19
+         3.4.0                    2026-07-20
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
@@ -29752,4 +29714,6 @@ save_
 
        Update description od _atom_type.symbol to state that the charge given
        is the charge, and not the oxidation state.
+
+       Remove _exptl_crystal.id as it is present in multiblock dictionary.
 ;
