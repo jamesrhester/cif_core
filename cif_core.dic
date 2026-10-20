@@ -10,8 +10,8 @@ data_CIF_CORE
 
     _dictionary.title             CIF_CORE
     _dictionary.class             Instance
-    _dictionary.version           3.4.0
-    _dictionary.date              2026-07-20
+    _dictionary.version           3.4.0-dev
+    _dictionary.date              2026-09-11
     _dictionary.uri
         https://raw.githubusercontent.com/COMCIFS/cif_core/main/cif_core.dic
     _dictionary.ddl_conformance   4.2.0
@@ -68,7 +68,6 @@ save_DIFFRN
 ;
     _name.category_id             DIFFRACTION
     _name.object_id               DIFFRN
-    _category_key.name            '_diffrn.id'
 
 save_
 
@@ -402,24 +401,6 @@ save_diffrn.flux_density
 
 save_
 
-save_diffrn.id
-
-    _definition.id                '_diffrn.id'
-    _definition.update            2022-05-09
-    _description.text
-;
-    Unique identifier for a diffraction data set collected under
-    particular diffraction conditions.
-;
-    _name.category_id             diffrn
-    _name.object_id               id
-    _type.purpose                 Key
-    _type.source                  Assigned
-    _type.container               Single
-    _type.contents                Word
-
-save_
-
 save_diffrn.measured_fraction_theta_full
 
     _definition.id                '_diffrn.measured_fraction_theta_full'
@@ -615,7 +596,7 @@ save_CELL
     _definition.id                CELL
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2023-03-02
+    _definition.update            2026-08-05
     _description.text
 ;
     The category of data items used to describe the parameters of
@@ -623,7 +604,6 @@ save_CELL
 ;
     _name.category_id             DIFFRN
     _name.object_id               CELL
-    _category_key.name            '_cell.diffrn_id'
 
 save_
 
@@ -859,29 +839,6 @@ save_cell.convert_uiso_to_uij_su
     _type.dimension               '[3,3]'
     _type.contents                Real
     _units.code                   none
-
-save_
-
-save_cell.diffrn_id
-
-    _definition.id                '_cell.diffrn_id'
-    _definition.update            2023-02-01
-    _description.text
-;
-    A pointer to the diffraction conditions to which this cell has been applied,
-    for example, to locate and extract diffraction peaks. These will normally be
-    the same conditions as those under which the cell was measured, but some
-    legacy data sets may have used a cell measured under differing conditions,
-    in which case those conditions should be indicated using the
-    _cell_measurement.condition_id data item.
-;
-    _name.category_id             cell
-    _name.object_id               diffrn_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -1968,7 +1925,7 @@ save_CELL_MEASUREMENT
     _definition.id                CELL_MEASUREMENT
     _definition.scope             Category
     _definition.class             Set
-    _definition.update            2022-05-25
+    _definition.update            2026-08-05
     _description.text
 ;
     The category of data items used to describe the measurement of
@@ -1976,51 +1933,6 @@ save_CELL_MEASUREMENT
 ;
     _name.category_id             CELL
     _name.object_id               CELL_MEASUREMENT
-    _category_key.name            '_cell_measurement.diffrn_id'
-
-save_
-
-save_cell_measurement.condition_id
-
-    _definition.id                '_cell_measurement.condition_id'
-    _definition.update            2023-02-01
-    _description.text
-;
-    A pointer to the diffraction conditions used for cell measurement,
-    where different to the diffraction conditions used for data
-    collection.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               condition_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
-    _method.purpose               Definition
-    _method.expression
-;
-    _enumeration.default = _cell_measurement.diffrn_id
-;
-
-save_
-
-save_cell_measurement.diffrn_id
-
-    _definition.id                '_cell_measurement.diffrn_id'
-    _definition.update            2023-02-01
-    _description.text
-;
-    A pointer to the diffraction experiment to which the measured cell
-    has been applied.
-;
-    _name.category_id             cell_measurement
-    _name.object_id               diffrn_id
-    _name.linked_item_id          '_diffrn.id'
-    _type.purpose                 Link
-    _type.source                  Related
-    _type.container               Single
-    _type.contents                Word
 
 save_
 
@@ -8517,12 +8429,11 @@ save_
 save_reflns_shell.d_res_limits
 
     _definition.id                '_reflns_shell.d_res_limits'
-    _definition.update            2012-11-26
+    _definition.update            2026-08-20
     _description.text
 ;
     Resolution for the reflections in this shell stored as
-    the list of lowest and highest values. This is the
-    category key.
+    the list of lowest and highest values.
 ;
     _name.category_id             reflns_shell
     _name.object_id               d_res_limits
@@ -20472,13 +20383,13 @@ save_publ_requested.category
          '_publ_requested_category'
          '_publ.requested_category'
 
-    _definition.update            2012-12-13
+    _definition.update            2026-09-11
     _description.text
 ;
     The category of paper submitted. For submission to Acta
-    Crystallographica Section C or Acta Crystallographica
-    Section E, ONLY those codes indicated for use with those
-    journals should be used.
+    Crystallographica Sections C and E or to IUCrData,
+    ONLY those codes indicated for current use with those
+    journals should be used for new submissions.
 ;
     _name.category_id             publ_requested
     _name.object_id               category
@@ -20490,27 +20401,28 @@ save_publ_requested.category
     loop_
       _enumeration_set.state
       _enumeration_set.detail
-         AD     'Addenda and Errata (Acta C, Acta E).'
-         CI     'CIF-access paper - inorganic (Acta C) (no longer in use).'
-         CM     'CIF-access paper - metal-organic (Acta C) (no longer in use).'
-         CO     'CIF-access paper - organic (Acta C)  (no longer in use).'
-         EI     'Electronic submission - inorganic (Acta E).'
-         EM     'Electronic submission - metal-organic (Acta E).'
-         EO     'Electronic submission - organic (Acta E).'
-         FA     'Full article.'
-         FI     'Full submission - inorganic (Acta C).'
-         FM     'Full submission - metal-organic (Acta C).'
-         FO     'Full submission - organic (Acta C).'
-         GI     'Research communications - inorganic compounds (Acta E).'
-         GM     'Research communications - metal-organic compounds (Acta E).'
-         GO     'Research communications - organic compounds (Acta E).'
-         HI     'Data reports - inorganic compounds (Acta E).'
-         HM     'Data reports - metal-organic compounds (Acta E).'
-         HO     'Data reports - organic compounds (Acta E).'
-         QI     'Inorganic compounds (Acta E).'
-         QM     'Metal-organic compounds (Acta E).'
-         QO     'Organic compounds (Acta E).'
-         SC     'Short communication.'
+         AD      'Addenda and Errata (Acta C, Acta E).'
+         CI      'CIF-access paper - inorganic (Acta C) (legacy use).'
+         CM      'CIF-access paper - metal-organic (Acta C) (legacy use).'
+         CO      'CIF-access paper - organic (Acta C)  (legacy use).'
+         EI      'Electronic submission - inorganic (Acta E) (legacy use).'
+         EM      'Electronic submission - metal-organic (Acta E) (legacy use).'
+         EO      'Electronic submission - organic (Acta E) (legacy use).'
+         FA      'Full article (Acta C).'
+         FI      'Full submission - inorganic (Acta C) (legacy use).'
+         FM      'Full submission - metal-organic (Acta C) (legacy use).'
+         FO      'Full submission - organic (Acta C) (legacy use).'
+         GI      'Research communications - inorganic compounds (Acta E).'
+         GM      'Research communications - metal-organic compounds (Acta E).'
+         GO      'Research communications - organic compounds (Acta E).'
+         HI      'Data reports - inorganic compounds (IUCrData).'
+         HM      'Data reports - metal-organic compounds (IUCrData).'
+         HO      'Data reports - organic compounds (IUCrData).'
+         QI      'Inorganic compounds (Acta E) (legacy use).'
+         QM      'Metal-organic compounds (Acta E) (legacy use).'
+         QO      'Organic compounds (Acta E) (legacy use).'
+         SC      'Short communication.'
+         TE      'Teaching and Education.'
 
     _enumeration.default          FA
 
@@ -29669,7 +29581,7 @@ save_
        _atom_site.U_iso_or_equiv. [bm, after Nespolo, M. (2024).
        J. Appl. Cryst. 57, 1733-1746]
 ;
-         3.4.0                    2026-07-20
+         3.4.0-dev                2026-09-11
 ;
        # Append change information below and update the above date
        # until dictionary is ready for release.
@@ -29712,8 +29624,9 @@ save_
        Added _space_group.reference_setting, _space_group.transform_Pp_abc, and
        _space_group.transform_Qq_xyz from symCIF to SPACE_GROUP.
 
-       Update description od _atom_type.symbol to state that the charge given
+       Update description of _atom_type.symbol to state that the charge given
        is the charge, and not the oxidation state.
 
-       Remove _exptl_crystal.id as it is present in multiblock dictionary.
+       Remove _exptl_crystal.id, _diffrn.id and pointers as they are
+       present in multiblock dictionary.
 ;
